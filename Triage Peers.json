@@ -7,6 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
+            "hash": "8edfe255a9c7de41f9d8ee046450e8a549a3c257",
             "joint": {
                 "cells": [
                     {
@@ -548,7 +549,7 @@
                         "type": "coa.FunctionBlock",
                         "userGeneratedCode": "\n    # Write your custom code here...\n    \n    # Fetch list name from container data\n    peer_list_name = phantom.get_container(container['id'])['data'][\"peer_list\"]\n    \n    phantom.debug(\"peer list value ind data list: <<%s>>\" % phantom.get_container(container['id'])['data'][\"peer_list\"])\n    \n    phantom.debug(\"peer_list_name = <<%s>>\" % peer_list_name)\n    \n    sta, msg, read_list__peer_list = phantom.get_list(list_name=peer_list_name)\n",
                         "warn": false,
-                        "z": 23
+                        "z": 29
                     },
                     {
                         "active": false,
@@ -609,7 +610,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def create_containers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_containers() called')\n    read_list__peer_list = json.loads(phantom.get_run_data(key='read_list:peer_list'))\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\",\"high\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
+                        "block_code": "def create_containers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_containers() called')\n    read_list__peer_list = json.loads(phantom.get_run_data(key='read_list:peer_list'))\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -619,7 +620,7 @@
                         "customCodeEndLineOffset": 4,
                         "customCodeStartLine": 7,
                         "custom_callback": "",
-                        "custom_code": "def create_containers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_containers() called')\n    read_list__peer_list = json.loads(phantom.get_run_data(key='read_list:peer_list'))\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\",\"high\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
+                        "custom_code": "def create_containers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):\n    phantom.debug('create_containers() called')\n    read_list__peer_list = json.loads(phantom.get_run_data(key='read_list:peer_list'))\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    return",
                         "custom_join": "",
                         "custom_name": "create containers",
                         "description": "",
@@ -726,18 +727,18 @@
                         "status": "",
                         "title": "custom function",
                         "type": "coa.FunctionBlock",
-                        "userGeneratedCode": "\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\",\"high\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n",
+                        "userGeneratedCode": "\n    # Write your custom code here...\n    for server in read_list__peer_list:\n        if server[2] in [\"critical\"]:\n            phantom.debug(\"%s is priority %s\" % (server[0],server[2]))\n            status, message, cid = phantom.create_container(name=\"Possible server malware\", label=\"events\")\n            #phantom.set_severity(cid, \"high\")\n            phantom.add_artifact(container=cid, raw_data={}, cef_data={\"sourceAddress\":server[0]}, label=\"infection\", name=\"Possibly infected host\", severity=\"high\", artifact_type=\"host\")\n",
                         "warn": false,
-                        "z": 24
+                        "z": 30
                     }
                 ]
             },
             "notes": ""
         },
         "schema": 3,
-        "version": "4.8.23319"
+        "version": "4.8.24304"
     },
-    "create_time": "2020-06-23T21:08:41.465364+00:00",
+    "create_time": "2020-06-25T02:54:54.388890+00:00",
     "draft_mode": false,
     "labels": [
         "*"

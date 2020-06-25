@@ -52,7 +52,7 @@ def create_containers(action=None, success=None, container=None, results=None, h
 
     # Write your custom code here...
     for server in read_list__peer_list:
-        if server[2] in ["critical","high"]:
+        if server[2] in ["critical"]:
             phantom.debug("%s is priority %s" % (server[0],server[2]))
             status, message, cid = phantom.create_container(name="Possible server malware", label="events")
             #phantom.set_severity(cid, "high")
