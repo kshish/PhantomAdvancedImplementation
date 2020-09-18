@@ -1,0 +1,34 @@
+{
+    "create_time": "2020-09-18T14:08:58.104653+00:00",
+    "custom_function_id": "c981b2a1c60d29b068a5181d958bf3b5d749591b",
+    "description": "Demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "more helpful text here",
+            "input_type": "list",
+            "name": "myIpVar",
+            "placeholder": "Select a CEF field with an IP in it"
+        },
+        {
+            "contains_type": [],
+            "description": "blah lbah",
+            "input_type": "list",
+            "name": "my",
+            "placeholder": "map any value into here"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myOutput",
+            "description": "myOutput description"
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
