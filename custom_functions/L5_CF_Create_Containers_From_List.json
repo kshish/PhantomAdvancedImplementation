@@ -1,0 +1,30 @@
+{
+    "create_time": "2020-09-18T18:43:21.033610+00:00",
+    "custom_function_id": "6005f5cd4365141231cb3b2874afabc32db77d84",
+    "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [],
+            "description": "List of Lists for things to be containerized.",
+            "input_type": "list",
+            "name": "to_be_containerized",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [],
+            "description": "This will be the label applied to the container",
+            "input_type": "item",
+            "name": "container_label",
+            "placeholder": "events"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "new_container_ids",
+            "description": "List of container id's that have been created by this Custom Function."
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
