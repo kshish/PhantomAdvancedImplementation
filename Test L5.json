@@ -1,0 +1,1518 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "clean": true,
+            "code_block": "",
+            "description": "",
+            "hash": "e702f6bd532b70b4e4b432d39ccba4ce33e1e208",
+            "joint": {
+                "cells": [
+                    {
+                        "0": "E",
+                        "1": "N",
+                        "2": "D",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".title": {
+                                "text": "END"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_end.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_finish(container, summary):\n    phantom.debug('on_finish() called')\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "5d5c9176-add5-449a-89c7-e1ca9005a9c9",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 134,
+                        "line_start": 121,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 6,
+                        "outPorts": [],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1960,
+                            "y": 260
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "END",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 2
+                    },
+                    {
+                        "0": "S",
+                        "1": "T",
+                        "2": "A",
+                        "3": "R",
+                        "4": "T",
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "ref-x": 33,
+                                "ref-y": 8,
+                                "text": "START"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.icon image": {
+                                "ref-x": 13,
+                                "xlink:href": "/inc/coa/img/block_icon_start.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def on_start(container):\n    phantom.debug('on_start() called')\n    \n    # call 'splunk_query' block\n    splunk_query(container=container)\n\n    return",
+                        "callback_code": "# read-only block view not available",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
+                        "inPorts": [],
+                        "join_code": "# read-only block view not available",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 15,
+                        "line_start": 7,
+                        "name": "",
+                        "notes": "",
+                        "number": 0,
+                        "order": 1,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 20,
+                            "y": 260
+                        },
+                        "previous_function": "",
+                        "previous_name": "",
+                        "show_number": true,
+                        "size": {
+                            "height": 54,
+                            "width": 80
+                        },
+                        "status": "",
+                        "title": "START",
+                        "type": "coa.StartEnd",
+                        "warn": false,
+                        "z": 7
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "7a568094-001f-4b02-8ff6-f74ffb234ce4",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 8
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "46caac5a-1e4f-40e9-9764-37916e9e549b",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "2b44bcee-ca6e-44db-b872-86c4670d6b25",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 10
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "9089ab1c-ed74-4afa-b1aa-5553df1c4bfc",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "2b44bcee-ca6e-44db-b872-86c4670d6b25",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "0a1a765f-94d5-4c31-b7be-78536826866c",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 20
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "splunk query"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch L4_Saved_Search server=host-004\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.dest_hostname\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\")\n\n    run_query_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "splunk query",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 49,
+                        "line_start": 33,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.dest_hostname"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 260,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "splunk_query",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "| savedsearch L4_Saved_Search server=host-004",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 42
+                    },
+                    {
+                        "action": "run query",
+                        "action_type": "investigate",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {
+                            "display": "",
+                            "query": "splunk_query:formatted_data"
+                        },
+                        "angle": 0,
+                        "app": "Splunk",
+                        "appid": "91883aa8-9c81-470b-97a1-5d8f7995f560",
+                        "approver": "",
+                        "assets": [
+                            {
+                                "action": "run query",
+                                "actions": [
+                                    "post data",
+                                    "update event",
+                                    "run query",
+                                    "on poll",
+                                    "get host events",
+                                    "test connectivity"
+                                ],
+                                "active": true,
+                                "app_name": "Splunk",
+                                "app_version": "1.3.23",
+                                "appid": "91883aa8-9c81-470b-97a1-5d8f7995f560",
+                                "asset_name": "splunk es lab",
+                                "config_type": "asset",
+                                "count": 0,
+                                "fields": {
+                                    "display": "",
+                                    "query": "splunk_query:formatted_data"
+                                },
+                                "has_app": true,
+                                "id": 10,
+                                "loaded": false,
+                                "missing": false,
+                                "name": "splunk es lab",
+                                "output": [
+                                    {
+                                        "column_name": "Host",
+                                        "column_order": "0",
+                                        "contains": [
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.data.*.host",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Time",
+                                        "column_order": "1",
+                                        "contains": [],
+                                        "data_path": "action_result.data.*._time",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "column_name": "Raw",
+                                        "column_order": "2",
+                                        "contains": [],
+                                        "data_path": "action_result.data.*._raw",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._cd",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._si",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._bkt",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.index",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.source",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._serial",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.linecount",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._indextime",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*.sourcetype",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.data.*._sourcetype",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "contains": [
+                                            "host name"
+                                        ],
+                                        "data_path": "action_result.data.*.splunk_server",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.status",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.message",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.summary.total_events",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "contains": [
+                                            "splunk query"
+                                        ],
+                                        "data_path": "action_result.parameter.query",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "action_result.parameter.display",
+                                        "data_type": "string"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects",
+                                        "data_type": "numeric"
+                                    },
+                                    {
+                                        "data_path": "summary.total_objects_successful",
+                                        "data_type": "numeric"
+                                    }
+                                ],
+                                "parameters": {
+                                    "display": {
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Display fields (comma separated)",
+                                        "key": "display",
+                                        "order": 1,
+                                        "primary": false,
+                                        "required": false
+                                    },
+                                    "query": {
+                                        "contains": [
+                                            "splunk query"
+                                        ],
+                                        "data_type": "string",
+                                        "default": null,
+                                        "description": "Query to run (in Splunk search language)",
+                                        "key": "query",
+                                        "order": 0,
+                                        "primary": true,
+                                        "required": true
+                                    }
+                                },
+                                "product_name": "Splunk Enterprise",
+                                "product_vendor": "Splunk Inc.",
+                                "targets": "10",
+                                "type": "siem"
+                            }
+                        ],
+                        "attrs": {
+                            ".action": {
+                                "text": "run query"
+                            },
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "Investigate"
+                            },
+                            "g.approver image": {
+                                "opacity": 1
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.icon image": {
+                                "xlink:href": "/inc/coa/img/block_icon_investigate.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            },
+                            "g.timer image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='splunk_query')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'display': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['splunk es lab'], callback=cf_local_Test_CF_1, name=\"run_query_1\")\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "2b44bcee-ca6e-44db-b872-86c4670d6b25",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 33,
+                        "line_start": 15,
+                        "message": "Configuring now",
+                        "name": "run query",
+                        "notes": "",
+                        "number": 1,
+                        "order": 2,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 600,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "run_query_1",
+                        "required_params": {
+                            "query": true
+                        },
+                        "reviewer": "",
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "app_action_assets",
+                        "status": "",
+                        "title": "Investigate",
+                        "type": "coa.Action",
+                        "warn": false,
+                        "z": 43
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".customFunction": {
+                                "text": "Test_CF"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_local_Test_CF_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_local_Test_CF_1() called')\n    \n    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    action_results_data_0_0 = [item[0] for item in action_results_data_0]\n    action_results_data_0_1 = [item[1] for item in action_results_data_0]\n    action_results_data_0_2 = [item[2] for item in action_results_data_0]\n\n    for item0 in container_property_0:\n        parameters.append({\n            'peer': action_results_data_0_0,\n            'count': action_results_data_0_1,\n            'priority': action_results_data_0_2,\n            'container': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/Test_CF\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/Test_CF', parameters=parameters, name='cf_local_Test_CF_1', callback=cf_local_Filter_list_1)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 87,
+                        "callsback": true,
+                        "cfDisplayPath": "local/Test_CF",
+                        "cfInputs": {
+                            "container": {
+                                "collectionType": "container_property",
+                                "dataPath": "container:id",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "count": {
+                                "collectionType": "action_results_data",
+                                "dataPath": "run_query_1:action_result.data.*.count",
+                                "paramName": "action_results_data_0_1",
+                                "type": "list"
+                            },
+                            "peer": {
+                                "collectionType": "action_results_data",
+                                "dataPath": "run_query_1:action_result.data.*.peer",
+                                "paramName": "action_results_data_0_0",
+                                "type": "list"
+                            },
+                            "priority": {
+                                "collectionType": "action_results_data",
+                                "dataPath": "run_query_1:action_result.data.*.priority",
+                                "paramName": "action_results_data_0_2",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "run query",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 26,
+                        "customFunction": "local/Test_CF",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "0a1a765f-94d5-4c31-b7be-78536826866c",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 87,
+                        "line_start": 49,
+                        "message": "Configuring now",
+                        "name": "Test_CF",
+                        "notes": "",
+                        "number": 1,
+                        "order": 4,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 920,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_local_Test_CF_1",
+                        "selectedCustomFunction": {
+                            "description": "",
+                            "draftMode": false,
+                            "id": 31,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "Test_CF",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 31,
+                                    "description": "",
+                                    "id": 110,
+                                    "input_type": "list",
+                                    "name": "peer",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "Test_CF",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 31,
+                                    "description": "",
+                                    "id": 111,
+                                    "input_type": "list",
+                                    "name": "priority",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "Test_CF",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 31,
+                                    "description": "",
+                                    "id": 112,
+                                    "input_type": "list",
+                                    "name": "count",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "Test_CF",
+                                    "contains_type": [
+                                        "phantom container id"
+                                    ],
+                                    "custom_function": 31,
+                                    "description": "",
+                                    "id": 113,
+                                    "input_type": "item",
+                                    "name": "container",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "Test_CF",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "Test_CF",
+                                    "contains_type": [
+                                        "*"
+                                    ],
+                                    "custom_function": 31,
+                                    "data_path": "results_list",
+                                    "description": "",
+                                    "id": 35
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Test L5",
+                                        "draft_mode": false,
+                                        "id": 113,
+                                        "name": "Test L5",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 46
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "1644ad07-a67d-4522-aab3-2cc6b6bb013c",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0a1a765f-94d5-4c31-b7be-78536826866c",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "ac205fef-d452-4edd-9c44-c69a0a2754d0",
+                            "selector": ".port-body[type=\"input\"]"
+                        },
+                        "type": "link",
+                        "z": 47
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".customFunction": {
+                                "text": "Filter_list"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def cf_local_Filter_list_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('cf_local_Filter_list_1() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['cf_local_Test_CF_1:custom_function_result.data.results_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"critical, high\",\n        ],\n    ]\n\n    parameters = []\n\n    literal_values_0_0 = [item[0] for item in literal_values_0]\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    parameters.append({\n        'filter_items': literal_values_0_0,\n        'list_obj': custom_function_result_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/Filter_list\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/Filter_list', parameters=parameters, name='cf_local_Filter_list_1')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "local/Filter_list",
+                        "cfInputs": {
+                            "filter_items": {
+                                "collectionType": "literal_values",
+                                "dataPath": "critical, high",
+                                "paramName": "literal_values_0_0",
+                                "type": "list"
+                            },
+                            "list_obj": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "cf_local_Test_CF_1:custom_function_result.data.results_list",
+                                "paramName": "custom_function_result_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "Test_CF",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "local/Filter_list",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "filter_items-0": "critical, high",
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ac205fef-d452-4edd-9c44-c69a0a2754d0",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 121,
+                        "line_start": 87,
+                        "list_obj-1": "cf_local_Test_CF_1:custom_function_result.data.results_list",
+                        "message": "Configuring now",
+                        "name": "Filter_list",
+                        "notes": "",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1200,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "cf_local_Filter_list_1",
+                        "selectedCustomFunction": {
+                            "description": "Filtering nested lists",
+                            "draftMode": false,
+                            "id": 39,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "Filter_list",
+                                    "contains_type": [],
+                                    "custom_function": 39,
+                                    "description": "",
+                                    "id": 134,
+                                    "input_type": "list",
+                                    "name": "filter_items",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "Filter_list",
+                                    "contains_type": [],
+                                    "custom_function": 39,
+                                    "description": "",
+                                    "id": 135,
+                                    "input_type": "list",
+                                    "name": "list_obj",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "Filter_list",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "Filter_list",
+                                    "contains_type": [],
+                                    "custom_function": 39,
+                                    "data_path": "filtered_list",
+                                    "description": "",
+                                    "id": 43
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 49
+                    }
+                ]
+            },
+            "notes": ""
+        },
+        "python_version": "2.7",
+        "schema": 4,
+        "version": "4.9.34514"
+    },
+    "create_time": "2020-09-18T12:02:12.884403+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
