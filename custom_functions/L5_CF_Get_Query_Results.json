@@ -1,0 +1,54 @@
+{
+    "create_time": "2020-09-18T18:43:53.144416+00:00",
+    "custom_function_id": "05eac2703eff12f205ab47f5053511d9c52cb605",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "peer",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "priority",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "*"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "count",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "phantom container id"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "container",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "*"
+            ],
+            "data_path": "results_list",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
