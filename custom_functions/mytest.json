@@ -1,0 +1,27 @@
+{
+    "create_time": "2020-11-05T19:56:45.859653+00:00",
+    "custom_function_id": "8f57373f52e173242a8e5bb7c27d9182cbad8f50",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "inp",
+            "placeholder": "destinationAddress"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myout",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
