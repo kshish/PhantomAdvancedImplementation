@@ -135,8 +135,8 @@ def Create_Containers_From_List(action=None, success=None, container=None, resul
 
     for item0 in literal_values_0:
         parameters.append({
-            'to_be_containerized': custom_function_result_0_0,
             'container_label': item0[0],
+            'to_be_containerized': custom_function_result_0_0,
         })
     ################################################################################
     ## Custom Code Start
