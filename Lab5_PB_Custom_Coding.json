@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "58a227aa3f55fcdafb7bcd1e5ffef9b60d1dec1d",
+            "hash": "f6bb2dd74d4079c07ed281c550b87bc88b37a6df",
             "joint": {
                 "cells": [
                     {
@@ -627,7 +627,7 @@
                             },
                             ".background": {
                                 "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
+                                "stroke": "#818D99"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -671,7 +671,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -792,735 +792,22 @@
                             "width": 180
                         },
                         "state": "app_action_assets",
-                        "status": "warn",
+                        "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
                         "z": 64
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "aab791fd-dcce-47b5-9417-09ec615e0037",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 78
-                    },
-                    {
                         ".scmName/text": "local",
                         "active": false,
                         "active_keys": {},
                         "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".customFunction": {
-                                "text": "Create Containers From ..."
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "local"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def Create_Containers_From_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_Containers_From_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Filter_List:custom_function_result.data.filtered_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"events\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    for item0 in literal_values_0:\n        parameters.append({\n            'container_label': item0[0],\n            'to_be_containerized': custom_function_result_0_0,\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Create_Containers_From_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Create_Containers_From_List', parameters=parameters, name='Create_Containers_From_List')\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "local/L5_CF_Create_Containers_From_List",
-                        "cfInputs": {
-                            "container_label": {
-                                "collectionType": "literal_values",
-                                "dataPath": "events",
-                                "paramName": "item0[0]",
-                                "type": "item"
-                            },
-                            "to_be_containerized": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "Filter_List:custom_function_result.data.filtered_list",
-                                "paramName": "custom_function_result_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Filter List",
-                        "connection_type": "action",
-                        "container_label-1": "events",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 22,
-                        "customFunction": "local/L5_CF_Create_Containers_From_List",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Create Containers From List",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": false,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3a5b9030-5a40-4185-b062-62fe868be086",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 156,
-                        "line_start": 122,
-                        "message": "Configuring now",
-                        "name": "L5_CF_Create_Containers_From_List",
-                        "notes": "",
-                        "number": 1,
-                        "order": 6,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1500,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "Create_Containers_From_List",
-                        "selectedCustomFunction": {
-                            "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
-                            "draftMode": false,
-                            "id": 24,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "description": "List of Lists for things to be containerized.",
-                                    "id": 81,
-                                    "input_type": "list",
-                                    "name": "to_be_containerized",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "description": "This will be the label applied to the container",
-                                    "id": 82,
-                                    "input_type": "item",
-                                    "name": "container_label",
-                                    "placeholder": "events"
-                                }
-                            ],
-                            "name": "L5_CF_Create_Containers_From_List",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "data_path": "new_container_ids",
-                                    "description": "List of container id's that have been created by this Custom Function.",
-                                    "id": 28
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": [
-                                    {
-                                        "active": false,
-                                        "display_path": "local/Lab5_Custom_Coding",
-                                        "draft_mode": false,
-                                        "id": 91,
-                                        "name": "Lab5_Custom_Coding",
-                                        "viewable": true
-                                    }
-                                ]
-                            },
-                            "scmId": 2,
-                            "scmName": "local"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "warn",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 80
-                    },
-                    {
-                        ".scmName/text": "local",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".customFunction": {
-                                "text": "Filter List"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "local"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 1
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def Filter_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Filter_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Get_Query_Results:custom_function_result.data.results_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"critical, high, medium\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n    literal_values_0_0 = [item[0] for item in literal_values_0]\n\n    parameters.append({\n        'list_obj': custom_function_result_0_0,\n        'filter_items': literal_values_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Filter_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Filter_List', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "local/L5_CF_Filter_List",
-                        "cfInputs": {
-                            "filter_items": {
-                                "collectionType": "literal_values",
-                                "dataPath": "critical, high, medium",
-                                "paramName": "literal_values_0_0",
-                                "type": "list"
-                            },
-                            "list_obj": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "Get_Query_Results:custom_function_result.data.results_list",
-                                "paramName": "custom_function_result_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Get Query Results",
-                        "connection_type": "action",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 22,
-                        "customFunction": "local/L5_CF_Filter_List",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Filter List",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": false,
-                        "filter_items-0": "critical, high, medium",
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "ac205fef-d452-4edd-9c44-c69a0a2754d0",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 122,
-                        "line_start": 88,
-                        "list_obj-1": "cf_local_L5_CF_Get_Query_Results_1:custom_function_result.data.results_list",
-                        "message": "Configuring now",
-                        "name": "L5_CF_Filter_List",
-                        "notes": "",
-                        "number": 1,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1200,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "Filter_List",
-                        "selectedCustomFunction": {
-                            "description": "Filtering nested lists. Makes the code cleaner.",
-                            "draftMode": false,
-                            "id": 22,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
-                                    "contains_type": [],
-                                    "custom_function": 22,
-                                    "description": "A comma seperated list of values for use in filtering the list of lists",
-                                    "id": 77,
-                                    "input_type": "list",
-                                    "name": "filter_items",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
-                                    "contains_type": [],
-                                    "custom_function": 22,
-                                    "description": "A list of lists, because of the way Phantom handles components, if this is returned from another custom function, it will be triple nested.  For example:\n\n[\n    [\n       ['a', 'b'],\n       ['c', 'd'],\n       ['e', 'f']\n    ]\n]\n\nAs such we will take the first list element, which happens to be the nested list we are looking for but if this doesn't work for you, please feel free to edit this up to your needs. :)",
-                                    "id": 78,
-                                    "input_type": "list",
-                                    "name": "list_obj",
-                                    "placeholder": ""
-                                }
-                            ],
-                            "name": "L5_CF_Filter_List",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
-                                    "contains_type": [],
-                                    "custom_function": 22,
-                                    "data_path": "filtered_list",
-                                    "description": "",
-                                    "id": 26
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": []
-                            },
-                            "scmId": 2,
-                            "scmName": "local"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "warn",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 82
-                    },
-                    {
-                        "active": false,
                         "angle": 0,
                         "attrs": {
                             ".background": {
                                 "fill": "#FFFFFF",
                                 "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".format": {
-                                "text": "splunk query"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.code image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
-                            }
-                        },
-                        "block_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\")\n\n    run_query_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
-                        "custom_callback": "",
-                        "custom_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}{1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\",drop_none=True)\n\n    run_query_1(container=container)\n\n    return",
-                        "custom_join": "",
-                        "custom_name": "splunk query",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": true,
-                        "has_custom_block": true,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 50,
-                        "line_start": 33,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 1,
-                        "order": 3,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.destinationHostName"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "artifact:*.cef.destinationAddress"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 260,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "splunk_query",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "| savedsearch peer_hosts server={0}{1}",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 83
-                    },
-                    {
-                        ".scmName/text": "local",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#E6984E"
                             },
                             ".color-band": {
                                 "fill": "#171D21"
@@ -1570,7 +857,7 @@
                                 "display": "none"
                             },
                             "g.error": {
-                                "opacity": 1
+                                "opacity": 0
                             },
                             "g.error image": {
                                 "xlink:href": "/inc/coa/img/block_icon_warn.svg"
@@ -1628,7 +915,7 @@
                         "delay": 0,
                         "description": "",
                         "draftMode": false,
-                        "existingCF": false,
+                        "existingCF": true,
                         "functionBlock": "custom function",
                         "has_custom": false,
                         "has_custom_block": false,
@@ -1801,12 +1088,725 @@
                             "width": 180
                         },
                         "state": "repo",
-                        "status": "warn",
+                        "status": "",
                         "title": "custom function",
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 84
+                        "z": 74
+                    },
+                    {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "aab791fd-dcce-47b5-9417-09ec615e0037",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 78
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".customFunction": {
+                                "text": "Create Containers From ..."
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def Create_Containers_From_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_Containers_From_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Filter_List:custom_function_result.data.filtered_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"events\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    for item0 in literal_values_0:\n        parameters.append({\n            'to_be_containerized': custom_function_result_0_0,\n            'container_label': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Create_Containers_From_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Create_Containers_From_List', parameters=parameters, name='Create_Containers_From_List')\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "local/L5_CF_Create_Containers_From_List",
+                        "cfInputs": {
+                            "container_label": {
+                                "collectionType": "literal_values",
+                                "dataPath": "events",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "to_be_containerized": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "Filter_List:custom_function_result.data.filtered_list",
+                                "paramName": "custom_function_result_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "Filter List",
+                        "connection_type": "action",
+                        "container_label-1": "events",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "local/L5_CF_Create_Containers_From_List",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Create Containers From List",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "3a5b9030-5a40-4185-b062-62fe868be086",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 156,
+                        "line_start": 122,
+                        "message": "Configuring now",
+                        "name": "L5_CF_Create_Containers_From_List",
+                        "notes": "",
+                        "number": 1,
+                        "order": 6,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1500,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "Create_Containers_From_List",
+                        "selectedCustomFunction": {
+                            "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
+                            "draftMode": false,
+                            "id": 24,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
+                                    "contains_type": [],
+                                    "custom_function": 24,
+                                    "description": "List of Lists for things to be containerized.",
+                                    "id": 81,
+                                    "input_type": "list",
+                                    "name": "to_be_containerized",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
+                                    "contains_type": [],
+                                    "custom_function": 24,
+                                    "description": "This will be the label applied to the container",
+                                    "id": 82,
+                                    "input_type": "item",
+                                    "name": "container_label",
+                                    "placeholder": "events"
+                                }
+                            ],
+                            "name": "L5_CF_Create_Containers_From_List",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
+                                    "contains_type": [],
+                                    "custom_function": 24,
+                                    "data_path": "new_container_ids",
+                                    "description": "List of container id's that have been created by this Custom Function.",
+                                    "id": 28
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": [
+                                    {
+                                        "active": false,
+                                        "display_path": "local/Lab5_Custom_Coding",
+                                        "draft_mode": false,
+                                        "id": 91,
+                                        "name": "Lab5_Custom_Coding",
+                                        "viewable": true
+                                    }
+                                ]
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 80
+                    },
+                    {
+                        ".scmName/text": "local",
+                        "active": false,
+                        "active_keys": {},
+                        "active_values": {},
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".customFunction": {
+                                "text": "Filter List"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            ".scmName": {
+                                "text": "local"
+                            },
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def Filter_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Filter_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Get_Query_Results:custom_function_result.data.results_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"critical, high, medium\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n    literal_values_0_0 = [item[0] for item in literal_values_0]\n\n    parameters.append({\n        'list_obj': custom_function_result_0_0,\n        'filter_items': literal_values_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Filter_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Filter_List', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "cfDisplayPath": "local/L5_CF_Filter_List",
+                        "cfInputs": {
+                            "filter_items": {
+                                "collectionType": "literal_values",
+                                "dataPath": "critical, high, medium",
+                                "paramName": "literal_values_0_0",
+                                "type": "list"
+                            },
+                            "list_obj": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "Get_Query_Results:custom_function_result.data.results_list",
+                                "paramName": "custom_function_result_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
+                        "connected_to_start": true,
+                        "connection_name": "Get Query Results",
+                        "connection_type": "action",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "local/L5_CF_Filter_List",
+                        "customFunctionId": null,
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "Filter List",
+                        "delay": 0,
+                        "description": "",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "filter_items-0": "critical, high, medium",
+                        "functionBlock": "custom function",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "ac205fef-d452-4edd-9c44-c69a0a2754d0",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 122,
+                        "line_start": 88,
+                        "list_obj-1": "cf_local_L5_CF_Get_Query_Results_1:custom_function_result.data.results_list",
+                        "message": "Configuring now",
+                        "name": "L5_CF_Filter_List",
+                        "notes": "",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1200,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "Filter_List",
+                        "selectedCustomFunction": {
+                            "description": "Filtering nested lists. Makes the code cleaner.",
+                            "draftMode": false,
+                            "id": 22,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "contains_type": [],
+                                    "custom_function": 22,
+                                    "description": "A comma seperated list of values for use in filtering the list of lists",
+                                    "id": 77,
+                                    "input_type": "list",
+                                    "name": "filter_items",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "contains_type": [],
+                                    "custom_function": 22,
+                                    "description": "A list of lists, because of the way Phantom handles components, if this is returned from another custom function, it will be triple nested.  For example:\n\n[\n    [\n       ['a', 'b'],\n       ['c', 'd'],\n       ['e', 'f']\n    ]\n]\n\nAs such we will take the first list element, which happens to be the nested list we are looking for but if this doesn't work for you, please feel free to edit this up to your needs. :)",
+                                    "id": 78,
+                                    "input_type": "list",
+                                    "name": "list_obj",
+                                    "placeholder": ""
+                                }
+                            ],
+                            "name": "L5_CF_Filter_List",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "contains_type": [],
+                                    "custom_function": 22,
+                                    "data_path": "filtered_list",
+                                    "description": "",
+                                    "id": 26
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 2,
+                            "scmName": "local"
+                        },
+                        "show_number": false,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "repo",
+                        "status": "",
+                        "title": "custom function",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
+                        "warn": false,
+                        "z": 82
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#FFFFFF",
+                                "stroke": "#818D99"
+                            },
+                            ".color-band": {
+                                "fill": "#171D21"
+                            },
+                            ".format": {
+                                "text": "splunk query"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\")\n\n    run_query_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}{1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\",drop_none=True)\n\n    run_query_1(container=container)\n\n    return",
+                        "custom_join": "",
+                        "custom_name": "splunk query",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": true,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 50,
+                        "line_start": 33,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.destinationHostName"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "artifact:*.cef.destinationAddress"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 260,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "splunk_query",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "| savedsearch peer_hosts server={0}{1}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 83
                     }
                 ]
             },
@@ -1816,7 +1816,7 @@
         "schema": 4,
         "version": "4.9.34514"
     },
-    "create_time": "2020-11-06T21:28:55.097535+00:00",
+    "create_time": "2020-11-20T07:11:28.079088+00:00",
     "draft_mode": false,
     "labels": [
         "*"
