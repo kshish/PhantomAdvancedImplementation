@@ -1,0 +1,41 @@
+{
+    "create_time": "2020-11-20T18:38:18.621067+00:00",
+    "custom_function_id": "c9013c26577384786232c9f32349f91d4ea51528",
+    "description": "comments in code",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "This function will do something with an ip",
+            "input_type": "list",
+            "name": "someip",
+            "placeholder": "select a field with an IP address in it"
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "myhost",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "hash"
+            ],
+            "data_path": "ipresult",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "another",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
