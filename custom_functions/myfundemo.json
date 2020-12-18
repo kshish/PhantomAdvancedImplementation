@@ -1,0 +1,43 @@
+{
+    "create_time": "2020-12-18T18:21:06.359744+00:00",
+    "custom_function_id": "4f33afbb567f402dcde1fc192affd5db9773d79d",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "this is help text",
+            "input_type": "list",
+            "name": "myip",
+            "placeholder": "select a field that has an IP in it"
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "someHost",
+            "placeholder": "select a host name"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myvalidatedIP",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "data_path": "myvalidatedHost",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
