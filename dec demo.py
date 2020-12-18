@@ -6,6 +6,9 @@ import json
 from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
+    
+    # call 'cf_chris_ChrisFun_1' block
+    cf_chris_ChrisFun_1(container=container)
 
     return
 
@@ -66,6 +69,30 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     parameters = []
 
     phantom.act(action="run query", parameters=parameters, name="run_query_1")
+
+    return
+
+def cf_chris_ChrisFun_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_chris_ChrisFun_1() called')
+    
+    parameters = []
+
+    parameters.append({
+        'myIpVar': None,
+        'my': None,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "chris/ChrisFun", returns the custom_function_run_id
+    phantom.custom_function(custom_function='chris/ChrisFun', parameters=parameters, name='cf_chris_ChrisFun_1', callback=set_severity_1)
 
     return
 
