@@ -1,0 +1,43 @@
+{
+    "create_time": "2021-01-08T18:04:15.074020+00:00",
+    "custom_function_id": "2481183946fa8bc1a51c6cc39fafee3543460308",
+    "description": "",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "myip",
+            "placeholder": "ip address"
+        },
+        {
+            "contains_type": [
+                "host name"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "myhost",
+            "placeholder": "host name"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myoutip",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "host name"
+            ],
+            "data_path": "myouthost",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.9.34514"
+}
