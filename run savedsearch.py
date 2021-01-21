@@ -15,7 +15,7 @@ def on_start(container):
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_1() called')
     
-    template = """|savedsearch find_peers server={0}"""
+    template = """find_peers server={0}"""
 
     # parameter list for template variable replacement
     parameters = [
@@ -38,7 +38,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     
     # build parameters list for 'run_query_1' call
     parameters.append({
-        'command': "search",
+        'command': "savedsearch",
         'query': formatted_data_1,
         'display': "",
         'parse_only': "",
