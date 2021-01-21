@@ -44,7 +44,53 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['esa100'], name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=format_2, name="run_query_1")
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """there were {0} number of peers"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.summary.total_events",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    update_event_1(container=container)
+
+    return
+
+def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_event_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'update_event_1' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventId', 'artifact:*.id'])
+    formatted_data_1 = phantom.get_format_data(name='format_2')
+
+    parameters = []
+    
+    # build parameters list for 'update_event_1' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'event_ids': container_item[0],
+                'owner': "",
+                'status': "in progress",
+                'integer_status': "",
+                'urgency': "",
+                'comment': formatted_data_1,
+                'wait_for_confirmation': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="update event", parameters=parameters, assets=['esa100'], name="update_event_1")
 
     return
 
