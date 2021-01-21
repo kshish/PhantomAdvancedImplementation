@@ -76,7 +76,7 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "format_list:formatted_data",
+        "format_list:formatted_data.*",
     ]
 
     #responses:
