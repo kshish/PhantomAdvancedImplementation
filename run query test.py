@@ -35,7 +35,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
 def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('format_1() called')
     
-    template = """earliest=-5m index=main {0} NOT host={0} | stats count  by dest"""
+    template = """earliest=-60m index=main {0} NOT host={0} | stats count  by dest"""
 
     # parameter list for template variable replacement
     parameters = [
