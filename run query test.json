@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "a3a921b5de057090c831a74258b2167e97665b5b",
+            "hash": "d93a593ec01f9232a581454b80aa0fb6b289e879",
             "joint": {
                 "cells": [
                     {
@@ -1661,7 +1661,8 @@
                                 "text": "format"
                             },
                             "g.code image": {
-                                "opacity": 1
+                                "opacity": 1,
+                                "xlink:href": "/inc/coa/img/block_icon_code_dark_on.svg"
                             },
                             "g.delete": {
                                 "display": "none"
@@ -1687,13 +1688,13 @@
                         "connection_name": "",
                         "connection_type": "",
                         "custom_callback": "",
-                        "custom_code": "",
+                        "custom_code": "def format_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_query() called')\n    \n    template = \"\"\"earliest=-60m index=main {0} NOT host={0} | stats count  by dest\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_query\")\n    phantom.debug(parameters)\n    run_query_1(container=container)\n\n    return",
                         "custom_join": "",
                         "custom_name": "format query",
                         "description": "",
                         "format": "format",
                         "has_custom": false,
-                        "has_custom_block": false,
+                        "has_custom_block": true,
                         "has_custom_callback": false,
                         "has_custom_join": false,
                         "id": "5a263634-3b3c-4357-93a5-4a6e72a0374f",
@@ -1799,7 +1800,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-01-22T14:24:25.827969+00:00",
+    "create_time": "2021-01-22T14:26:39.239249+00:00",
     "draft_mode": false,
     "labels": [
         "*"

@@ -51,7 +51,7 @@ def format_query(action=None, success=None, container=None, results=None, handle
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_query")
-
+    phantom.debug(parameters)
     run_query_1(container=container)
 
     return
