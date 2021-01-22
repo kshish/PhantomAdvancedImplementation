@@ -10,17 +10,20 @@ def on_start(container):
     # call 'format_query' block
     format_query(container=container)
 
+    # call 'block_ip_1' block
+    block_ip_1(container=container)
+
     return
 
-def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('run_query_1() called')
+def run_my_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('run_my_query() called')
 
-    # collect data for 'run_query_1' call
+    # collect data for 'run_my_query' call
     formatted_data_1 = phantom.get_format_data(name='format_query')
 
     parameters = []
     
-    # build parameters list for 'run_query_1' call
+    # build parameters list for 'run_my_query' call
     parameters.append({
         'query': formatted_data_1,
         'command': "search",
@@ -28,12 +31,12 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=run_query_1_callback, name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=run_my_query_callback, name="run_my_query")
 
     return
 
-def run_query_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
-    phantom.debug('run_query_1_callback() called')
+def run_my_query_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('run_my_query_callback() called')
     
     format_list(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
     format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
@@ -51,8 +54,8 @@ def format_query(action=None, success=None, container=None, results=None, handle
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_query")
-    phantom.debug(parameters)
-    run_query_1(container=container)
+
+    run_my_query(container=container)
 
     return
 
@@ -65,8 +68,8 @@ destination {0} communicated {1} times
 
     # parameter list for template variable replacement
     parameters = [
-        "run_query_1:action_result.data.*.dest",
-        "run_query_1:action_result.data.*.count",
+        "run_my_query:action_result.data.*.dest",
+        "run_my_query:action_result.data.*.count",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_list")
@@ -108,7 +111,7 @@ def format_3(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "run_query_1:action_result.summary.total_events",
+        "run_my_query:action_result.summary.total_events",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_3")
@@ -127,6 +130,15 @@ def add_comment_set_label_set_sensitivity_1(action=None, success=None, container
     phantom.set_label(container=container, label="test")
 
     phantom.set_sensitivity(container=container, sensitivity="amber")
+
+    return
+
+def block_ip_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('block_ip_1() called')
+
+    parameters = []
+
+    phantom.act(action="block ip", parameters=parameters, name="block_ip_1")
 
     return
 
