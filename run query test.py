@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'format_1' block
-    format_1(container=container)
+    # call 'format_query' block
+    format_query(container=container)
 
     return
 
@@ -16,7 +16,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     phantom.debug('run_query_1() called')
 
     # collect data for 'run_query_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_1')
+    formatted_data_1 = phantom.get_format_data(name='format_query')
 
     parameters = []
     
@@ -40,8 +40,8 @@ def run_query_1_callback(action=None, success=None, container=None, results=None
 
     return
 
-def format_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('format_1() called')
+def format_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_query() called')
     
     template = """earliest=-60m index=main {0} NOT host={0} | stats count  by dest"""
 
@@ -50,7 +50,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
         "artifact:*.cef.destination",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="format_1")
+    phantom.format(container=container, template=template, parameters=parameters, name="format_query")
 
     run_query_1(container=container)
 
