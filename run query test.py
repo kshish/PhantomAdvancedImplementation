@@ -22,13 +22,21 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     
     # build parameters list for 'run_query_1' call
     parameters.append({
-        'command': "search",
         'query': formatted_data_1,
+        'command': "search",
         'display': "",
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=format_list, name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=run_query_1_callback, name="run_query_1")
+
+    return
+
+def run_query_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('run_query_1_callback() called')
+    
+    format_list(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    format_3(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -90,6 +98,35 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     ]
 
     phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
+
+    return
+
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_3() called')
+    
+    template = """There were {0} servers communicated with"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.summary.total_events",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+
+    add_comment_set_label_set_sensitivity_1(container=container)
+
+    return
+
+def add_comment_set_label_set_sensitivity_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('add_comment_set_label_set_sensitivity_1() called')
+
+    formatted_data_1 = phantom.get_format_data(name='format_3')
+
+    phantom.comment(container=container, comment=formatted_data_1)
+
+    phantom.set_label(container=container, label="test")
+
+    phantom.set_sensitivity(container=container, sensitivity="amber")
 
     return
 
