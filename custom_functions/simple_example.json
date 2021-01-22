@@ -1,0 +1,56 @@
+{
+    "create_time": "2021-01-22T15:06:39.038039+00:00",
+    "custom_function_id": "dd91a8b9857c1f88b05a7a74162fb2c8ee52dacd",
+    "description": "demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "better help text",
+            "input_type": "item",
+            "name": "myip",
+            "placeholder": "please map an ip field here"
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "description": "",
+            "input_type": "item",
+            "name": "myhost",
+            "placeholder": "hostname"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "mysomething",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myIpOut",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "data_path": "myHostOut",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "mySomethingOut",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.0.40961",
+    "python_version": "3"
+}
