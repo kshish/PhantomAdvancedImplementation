@@ -23,7 +23,9 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     # build parameters list for 'run_query_1' call
     parameters.append({
         'query': formatted_data_1,
+        'command': "",
         'display': "",
+        'parse_only': "",
     })
 
     phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=Get_Query_Results, name="run_query_1")
@@ -49,7 +51,7 @@ def splunk_query(action=None, success=None, container=None, results=None, handle
 def Get_Query_Results(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Get_Query_Results() called')
     
-    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )
+    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )
     container_property_0 = [
         [
             container.get("id"),
@@ -65,8 +67,8 @@ def Get_Query_Results(action=None, success=None, container=None, results=None, h
     for item0 in container_property_0:
         parameters.append({
             'peer': action_results_data_0_0,
-            'priority': action_results_data_0_1,
-            'count': action_results_data_0_2,
+            'count': action_results_data_0_1,
+            'priority': action_results_data_0_2,
             'container': item0[0],
         })
     ################################################################################
@@ -96,12 +98,12 @@ def Filter_List(action=None, success=None, container=None, results=None, handle=
 
     parameters = []
 
-    literal_values_0_0 = [item[0] for item in literal_values_0]
     custom_function_result_0_0 = [item[0] for item in custom_function_result_0]
+    literal_values_0_0 = [item[0] for item in literal_values_0]
 
     parameters.append({
-        'filter_items': literal_values_0_0,
         'list_obj': custom_function_result_0_0,
+        'filter_items': literal_values_0_0,
     })
     ################################################################################
     ## Custom Code Start
@@ -134,8 +136,8 @@ def Create_Containers_From_List(action=None, success=None, container=None, resul
 
     for item0 in literal_values_0:
         parameters.append({
-            'to_be_containerized': custom_function_result_0_0,
             'container_label': item0[0],
+            'to_be_containerized': custom_function_result_0_0,
         })
     ################################################################################
     ## Custom Code Start
