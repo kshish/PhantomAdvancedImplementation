@@ -5,6 +5,7 @@ This playbook gets the parent playbook action results and checks to see if there
 import phantom.rules as phantom
 import json
 from datetime import datetime, timedelta
+
 def on_start(container):
     phantom.debug('on_start() called')
     
@@ -30,7 +31,7 @@ def get_playbook_action_runs(action=None, success=None, container=None, results=
         'verify_certificate': False,
     })
 
-    phantom.act("get data", parameters=parameters, assets=['ph100'], callback=check_action_runs, name="get_playbook_action_runs")
+    phantom.act("get data", parameters=parameters, assets=['phantom_rest'], callback=check_action_runs, name="get_playbook_action_runs")
 
     return
 
@@ -113,7 +114,7 @@ def get_app_run_data(action=None, success=None, container=None, results=None, ha
             'verify_certificate': False,
         })
 
-    phantom.act("get data", parameters=parameters, assets=['ph100'], callback=subject_body, name="get_app_run_data")
+    phantom.act("get data", parameters=parameters, assets=['phantom_rest'], callback=subject_body, name="get_app_run_data")
 
     return
 
@@ -132,7 +133,7 @@ def get_parent_playbook_data(action=None, success=None, container=None, results=
         'verify_certificate': False,
     })
 
-    phantom.act("get data", parameters=parameters, assets=['ph100'], callback=playbook_message_format, name="get_parent_playbook_data")
+    phantom.act("get data", parameters=parameters, assets=['phantom_rest'], callback=playbook_message_format, name="get_parent_playbook_data")
 
     return
 
@@ -446,7 +447,7 @@ action_run/{0}/app_runs
 def on_finish(container, summary):
     phantom.debug('on_finish() called')
     # This function is called after all actions are completed.
-    # summary of all the action and/or all detals of actions
+    # summary of all the action and/or all detals of actions 
     # can be collected here.
 
     # summary_json = phantom.get_summary()
