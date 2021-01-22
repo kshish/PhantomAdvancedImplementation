@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "f6bb2dd74d4079c07ed281c550b87bc88b37a6df",
+            "hash": "9c82833e3d578791a8c246ec99180c539e706207",
             "joint": {
                 "cells": [
                     {
@@ -18,11 +18,11 @@
                         "angle": 0,
                         "attrs": {
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -73,8 +73,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 169,
-                        "line_start": 156,
+                        "line_end": 168,
+                        "line_start": 155,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -159,11 +159,11 @@
                         "angle": 0,
                         "attrs": {
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
                             ".outPorts>.port-out": {
                                 "ref": ".background",
@@ -450,6 +450,217 @@
                         "z": 50
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "aab791fd-dcce-47b5-9417-09ec615e0037",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 78
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "splunk query"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.code image": {
+                                "opacity": 1
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            },
+                            "g.notes image": {
+                                "opacity": 1
+                            }
+                        },
+                        "block_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch find_peers server={0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\")\n\n    run_query_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "",
+                        "connection_type": "",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "splunk query",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": true,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 49,
+                        "line_start": 33,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 1,
+                        "order": 3,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "artifact:*.cef.destination"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 260,
+                            "y": 240
+                        },
+                        "previous_function": "",
+                        "previous_name": "splunk_query",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "| savedsearch find_peers server={0}",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 85
+                    },
+                    {
                         "action": "run query",
                         "action_type": "investigate",
                         "active": false,
@@ -488,7 +699,7 @@
                                 "id": 10,
                                 "loaded": false,
                                 "missing": false,
-                                "name": "splunk",
+                                "name": "esa100",
                                 "output": [
                                     {
                                         "column_name": "Host",
@@ -626,11 +837,11 @@
                                 "text": "run query"
                             },
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -689,7 +900,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='splunk_query')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'display': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['splunk'], callback=Get_Query_Results, name=\"run_query_1\")\n\n    return",
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='splunk_query')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'display': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['esa100'], callback=Get_Query_Results, name=\"run_query_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -796,21 +1007,21 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": false,
-                        "z": 64
+                        "z": 86
                     },
                     {
-                        ".scmName/text": "local",
+                        ".scmName/text": "PAI",
                         "active": false,
                         "active_keys": {},
                         "active_values": {},
                         "angle": 0,
                         "attrs": {
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
                             ".customFunction": {
                                 "text": "Get Query Results"
@@ -842,7 +1053,7 @@
                                 }
                             },
                             ".scmName": {
-                                "text": "local"
+                                "text": "PAI"
                             },
                             ".title": {
                                 "text": "custom function"
@@ -866,11 +1077,11 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def Get_Query_Results(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Get_Query_Results() called')\n    \n    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    action_results_data_0_0 = [item[0] for item in action_results_data_0]\n    action_results_data_0_1 = [item[1] for item in action_results_data_0]\n    action_results_data_0_2 = [item[2] for item in action_results_data_0]\n\n    for item0 in container_property_0:\n        parameters.append({\n            'peer': action_results_data_0_0,\n            'count': action_results_data_0_1,\n            'priority': action_results_data_0_2,\n            'container': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Get_Query_Results\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Get_Query_Results', parameters=parameters, name='Get_Query_Results', callback=Filter_List)\n\n    return",
+                        "block_code": "def Get_Query_Results(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Get_Query_Results() called')\n    \n    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )\n    container_property_0 = [\n        [\n            container.get(\"id\"),\n        ],\n    ]\n\n    parameters = []\n\n    action_results_data_0_0 = [item[0] for item in action_results_data_0]\n    action_results_data_0_1 = [item[1] for item in action_results_data_0]\n    action_results_data_0_2 = [item[2] for item in action_results_data_0]\n\n    for item0 in container_property_0:\n        parameters.append({\n            'peer': action_results_data_0_0,\n            'priority': action_results_data_0_1,\n            'count': action_results_data_0_2,\n            'container': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"PAI/L5_CF_Get_Query_Results_py3\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='PAI/L5_CF_Get_Query_Results_py3', parameters=parameters, name='Get_Query_Results', callback=Filter_List)\n\n    return",
                         "callback_code": "",
                         "callback_start": 87,
                         "callsback": true,
-                        "cfDisplayPath": "local/L5_CF_Get_Query_Results",
+                        "cfDisplayPath": "PAI/L5_CF_Get_Query_Results_py3",
                         "cfInputs": {
                             "container": {
                                 "collectionType": "container_property",
@@ -881,7 +1092,7 @@
                             "count": {
                                 "collectionType": "action_results_data",
                                 "dataPath": "run_query_1:action_result.data.*.count",
-                                "paramName": "action_results_data_0_1",
+                                "paramName": "action_results_data_0_2",
                                 "type": "list"
                             },
                             "peer": {
@@ -893,7 +1104,7 @@
                             "priority": {
                                 "collectionType": "action_results_data",
                                 "dataPath": "run_query_1:action_result.data.*.priority",
-                                "paramName": "action_results_data_0_2",
+                                "paramName": "action_results_data_0_1",
                                 "type": "list"
                             }
                         },
@@ -906,7 +1117,7 @@
                         "currentVersion": true,
                         "customCodeEndLineOffset": 7,
                         "customCodeStartLine": 26,
-                        "customFunction": "local/L5_CF_Get_Query_Results",
+                        "customFunction": "PAI/L5_CF_Get_Query_Results_py3",
                         "customFunctionId": null,
                         "custom_callback": "",
                         "custom_code": "",
@@ -928,10 +1139,10 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 88,
-                        "line_start": 50,
+                        "line_end": 87,
+                        "line_start": 49,
                         "message": "Configuring now",
-                        "name": "L5_CF_Get_Query_Results",
+                        "name": "L5_CF_Get_Query_Results_py3",
                         "notes": "",
                         "number": 1,
                         "order": 4,
@@ -1001,86 +1212,77 @@
                         "selectedCustomFunction": {
                             "description": "",
                             "draftMode": false,
-                            "id": 18,
+                            "id": 29,
                             "inputs": [
                                 {
-                                    "_pretty_custom_function": "L5_CF_Get_Query_Results",
+                                    "_pretty_custom_function": "L5_CF_Get_Query_Results_py3",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 18,
+                                    "custom_function": 29,
                                     "description": "",
-                                    "id": 61,
+                                    "id": 85,
                                     "input_type": "list",
                                     "name": "peer",
                                     "placeholder": ""
                                 },
                                 {
-                                    "_pretty_custom_function": "L5_CF_Get_Query_Results",
+                                    "_pretty_custom_function": "L5_CF_Get_Query_Results_py3",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 18,
+                                    "custom_function": 29,
                                     "description": "",
-                                    "id": 62,
+                                    "id": 86,
                                     "input_type": "list",
                                     "name": "priority",
                                     "placeholder": ""
                                 },
                                 {
-                                    "_pretty_custom_function": "L5_CF_Get_Query_Results",
+                                    "_pretty_custom_function": "L5_CF_Get_Query_Results_py3",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 18,
+                                    "custom_function": 29,
                                     "description": "",
-                                    "id": 63,
+                                    "id": 87,
                                     "input_type": "list",
                                     "name": "count",
                                     "placeholder": ""
                                 },
                                 {
-                                    "_pretty_custom_function": "L5_CF_Get_Query_Results",
+                                    "_pretty_custom_function": "L5_CF_Get_Query_Results_py3",
                                     "contains_type": [
                                         "phantom container id"
                                     ],
-                                    "custom_function": 18,
+                                    "custom_function": 29,
                                     "description": "",
-                                    "id": 64,
+                                    "id": 88,
                                     "input_type": "item",
                                     "name": "container",
                                     "placeholder": ""
                                 }
                             ],
-                            "name": "L5_CF_Get_Query_Results",
+                            "name": "L5_CF_Get_Query_Results_py3",
                             "outputs": [
                                 {
-                                    "_pretty_custom_function": "L5_CF_Get_Query_Results",
+                                    "_pretty_custom_function": "L5_CF_Get_Query_Results_py3",
                                     "contains_type": [
                                         "*"
                                     ],
-                                    "custom_function": 18,
+                                    "custom_function": 29,
                                     "data_path": "results_list",
                                     "description": "",
-                                    "id": 22
+                                    "id": 39
                                 }
                             ],
                             "playbooks": {
                                 "draft_playbooks": [],
                                 "draft_version_id": null,
-                                "playbooks": [
-                                    {
-                                        "active": false,
-                                        "display_path": "local/Test L5",
-                                        "draft_mode": false,
-                                        "id": 83,
-                                        "name": "Test L5",
-                                        "viewable": true
-                                    }
-                                ]
+                                "playbooks": []
                             },
-                            "scmId": 2,
-                            "scmName": "local"
+                            "scmId": 6,
+                            "scmName": "PAI"
                         },
                         "show_number": false,
                         "size": {
@@ -1093,312 +1295,21 @@
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 74
+                        "z": 87
                     },
                     {
-                        "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
-                            },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
-                            }
-                        },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
-                        ],
-                        "id": "aab791fd-dcce-47b5-9417-09ec615e0037",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "0c78ba6d-976f-4ece-815e-1b2fbcf0aa78",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
-                        ],
-                        "target": {
-                            "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "type": "link",
-                        "z": 78
-                    },
-                    {
-                        ".scmName/text": "local",
+                        ".scmName/text": "PAI",
                         "active": false,
                         "active_keys": {},
                         "active_values": {},
                         "angle": 0,
                         "attrs": {
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
-                            },
-                            ".customFunction": {
-                                "text": "Create Containers From ..."
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "ref-x": 5,
-                                "ref-y": 105,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            ".scmName": {
-                                "text": "local"
-                            },
-                            ".title": {
-                                "text": "custom function"
-                            },
-                            ".title-info": {
-                                "text": ""
-                            },
-                            "g.branch image": {
-                                "opacity": 1
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def Create_Containers_From_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_Containers_From_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Filter_List:custom_function_result.data.filtered_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"events\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    for item0 in literal_values_0:\n        parameters.append({\n            'to_be_containerized': custom_function_result_0_0,\n            'container_label': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Create_Containers_From_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Create_Containers_From_List', parameters=parameters, name='Create_Containers_From_List')\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "cfDisplayPath": "local/L5_CF_Create_Containers_From_List",
-                        "cfInputs": {
-                            "container_label": {
-                                "collectionType": "literal_values",
-                                "dataPath": "events",
-                                "paramName": "item0[0]",
-                                "type": "item"
-                            },
-                            "to_be_containerized": {
-                                "collectionType": "custom_function_result",
-                                "dataPath": "Filter_List:custom_function_result.data.filtered_list",
-                                "paramName": "custom_function_result_0_0",
-                                "type": "list"
-                            }
-                        },
-                        "color": "",
-                        "connected_to_start": true,
-                        "connection_name": "Filter List",
-                        "connection_type": "action",
-                        "container_label-1": "events",
-                        "currentVersion": true,
-                        "customCodeEndLineOffset": 7,
-                        "customCodeStartLine": 22,
-                        "customFunction": "local/L5_CF_Create_Containers_From_List",
-                        "customFunctionId": null,
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "Create Containers From List",
-                        "delay": 0,
-                        "description": "",
-                        "draftMode": false,
-                        "existingCF": true,
-                        "functionBlock": "custom function",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "3a5b9030-5a40-4185-b062-62fe868be086",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 156,
-                        "line_start": 122,
-                        "message": "Configuring now",
-                        "name": "L5_CF_Create_Containers_From_List",
-                        "notes": "",
-                        "number": 1,
-                        "order": 6,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1500,
-                            "y": 240
-                        },
-                        "previous_function": "",
-                        "previous_name": "Create_Containers_From_List",
-                        "selectedCustomFunction": {
-                            "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
-                            "draftMode": false,
-                            "id": 24,
-                            "inputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "description": "List of Lists for things to be containerized.",
-                                    "id": 81,
-                                    "input_type": "list",
-                                    "name": "to_be_containerized",
-                                    "placeholder": ""
-                                },
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "description": "This will be the label applied to the container",
-                                    "id": 82,
-                                    "input_type": "item",
-                                    "name": "container_label",
-                                    "placeholder": "events"
-                                }
-                            ],
-                            "name": "L5_CF_Create_Containers_From_List",
-                            "outputs": [
-                                {
-                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List",
-                                    "contains_type": [],
-                                    "custom_function": 24,
-                                    "data_path": "new_container_ids",
-                                    "description": "List of container id's that have been created by this Custom Function.",
-                                    "id": 28
-                                }
-                            ],
-                            "playbooks": {
-                                "draft_playbooks": [],
-                                "draft_version_id": null,
-                                "playbooks": [
-                                    {
-                                        "active": false,
-                                        "display_path": "local/Lab5_Custom_Coding",
-                                        "draft_mode": false,
-                                        "id": 91,
-                                        "name": "Lab5_Custom_Coding",
-                                        "viewable": true
-                                    }
-                                ]
-                            },
-                            "scmId": 2,
-                            "scmName": "local"
-                        },
-                        "show_number": false,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "repo",
-                        "status": "",
-                        "title": "custom function",
-                        "type": "coa.CustomFunctionBlock",
-                        "userGeneratedCode": "    # Write your custom code here...",
-                        "warn": false,
-                        "z": 80
-                    },
-                    {
-                        ".scmName/text": "local",
-                        "active": false,
-                        "active_keys": {},
-                        "active_values": {},
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
-                            },
-                            ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
                             ".customFunction": {
                                 "text": "Filter List"
@@ -1430,7 +1341,7 @@
                                 }
                             },
                             ".scmName": {
-                                "text": "local"
+                                "text": "PAI"
                             },
                             ".title": {
                                 "text": "custom function"
@@ -1454,15 +1365,15 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def Filter_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Filter_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Get_Query_Results:custom_function_result.data.results_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"critical, high, medium\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n    literal_values_0_0 = [item[0] for item in literal_values_0]\n\n    parameters.append({\n        'list_obj': custom_function_result_0_0,\n        'filter_items': literal_values_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"local/L5_CF_Filter_List\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='local/L5_CF_Filter_List', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)\n\n    return",
+                        "block_code": "def Filter_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Filter_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Get_Query_Results:custom_function_result.data.results_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"critical, high\",\n        ],\n    ]\n\n    parameters = []\n\n    literal_values_0_0 = [item[0] for item in literal_values_0]\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    parameters.append({\n        'filter_items': literal_values_0_0,\n        'list_obj': custom_function_result_0_0,\n    })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"PAI/L5_CF_Filter_List_py3\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='PAI/L5_CF_Filter_List_py3', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
-                        "cfDisplayPath": "local/L5_CF_Filter_List",
+                        "cfDisplayPath": "PAI/L5_CF_Filter_List_py3",
                         "cfInputs": {
                             "filter_items": {
                                 "collectionType": "literal_values",
-                                "dataPath": "critical, high, medium",
+                                "dataPath": "critical, high",
                                 "paramName": "literal_values_0_0",
                                 "type": "list"
                             },
@@ -1480,7 +1391,7 @@
                         "currentVersion": true,
                         "customCodeEndLineOffset": 7,
                         "customCodeStartLine": 22,
-                        "customFunction": "local/L5_CF_Filter_List",
+                        "customFunction": "PAI/L5_CF_Filter_List_py3",
                         "customFunctionId": null,
                         "custom_callback": "",
                         "custom_code": "",
@@ -1490,7 +1401,7 @@
                         "description": "",
                         "draftMode": false,
                         "existingCF": true,
-                        "filter_items-0": "critical, high, medium",
+                        "filter_items-0": "critical, high",
                         "functionBlock": "custom function",
                         "has_custom": false,
                         "has_custom_block": false,
@@ -1503,11 +1414,11 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 122,
-                        "line_start": 88,
-                        "list_obj-1": "cf_local_L5_CF_Get_Query_Results_1:custom_function_result.data.results_list",
+                        "line_end": 121,
+                        "line_start": 87,
+                        "list_obj-1": "Get_Query_Results:custom_function_result.data.results_list",
                         "message": "Configuring now",
-                        "name": "L5_CF_Filter_List",
+                        "name": "L5_CF_Filter_List_py3",
                         "notes": "",
                         "number": 1,
                         "order": 5,
@@ -1575,12 +1486,12 @@
                         "selectedCustomFunction": {
                             "description": "Filtering nested lists. Makes the code cleaner.",
                             "draftMode": false,
-                            "id": 22,
+                            "id": 26,
                             "inputs": [
                                 {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "_pretty_custom_function": "L5_CF_Filter_List_py3",
                                     "contains_type": [],
-                                    "custom_function": 22,
+                                    "custom_function": 26,
                                     "description": "A comma seperated list of values for use in filtering the list of lists",
                                     "id": 77,
                                     "input_type": "list",
@@ -1588,9 +1499,9 @@
                                     "placeholder": ""
                                 },
                                 {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "_pretty_custom_function": "L5_CF_Filter_List_py3",
                                     "contains_type": [],
-                                    "custom_function": 22,
+                                    "custom_function": 26,
                                     "description": "A list of lists, because of the way Phantom handles components, if this is returned from another custom function, it will be triple nested.  For example:\n\n[\n    [\n       ['a', 'b'],\n       ['c', 'd'],\n       ['e', 'f']\n    ]\n]\n\nAs such we will take the first list element, which happens to be the nested list we are looking for but if this doesn't work for you, please feel free to edit this up to your needs. :)",
                                     "id": 78,
                                     "input_type": "list",
@@ -1598,15 +1509,15 @@
                                     "placeholder": ""
                                 }
                             ],
-                            "name": "L5_CF_Filter_List",
+                            "name": "L5_CF_Filter_List_py3",
                             "outputs": [
                                 {
-                                    "_pretty_custom_function": "L5_CF_Filter_List",
+                                    "_pretty_custom_function": "L5_CF_Filter_List_py3",
                                     "contains_type": [],
-                                    "custom_function": 22,
+                                    "custom_function": 26,
                                     "data_path": "filtered_list",
                                     "description": "",
-                                    "id": 26
+                                    "id": 36
                                 }
                             ],
                             "playbooks": {
@@ -1614,8 +1525,8 @@
                                 "draft_version_id": null,
                                 "playbooks": []
                             },
-                            "scmId": 2,
-                            "scmName": "local"
+                            "scmId": 6,
+                            "scmName": "PAI"
                         },
                         "show_number": false,
                         "size": {
@@ -1628,21 +1539,24 @@
                         "type": "coa.CustomFunctionBlock",
                         "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 82
+                        "z": 88
                     },
                     {
+                        ".scmName/text": "PAI",
                         "active": false,
+                        "active_keys": {},
+                        "active_values": {},
                         "angle": 0,
                         "attrs": {
                             ".background": {
-                                "fill": "#FFFFFF",
-                                "stroke": "#818D99"
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
                             ".color-band": {
-                                "fill": "#171D21"
+                                "fill": "#3C444D"
                             },
-                            ".format": {
-                                "text": "splunk query"
+                            ".customFunction": {
+                                "text": "Create Containers From ..."
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1656,24 +1570,31 @@
                             },
                             ".message": {
                                 "opacity": 0,
+                                "ref-x": 5,
+                                "ref-y": 105,
                                 "text": "Configuring now"
                             },
-                            ".outPorts>.port-out-1": {
+                            ".outPorts>.port-out": {
                                 "ref": ".background",
                                 "ref-x": 0.5
                             },
-                            ".outPorts>.port-out-1>.port-body": {
+                            ".outPorts>.port-out>.port-body": {
                                 "port": {
-                                    "id": "out-1",
+                                    "id": "out",
                                     "type": "out"
                                 }
                             },
-                            ".title": {
-                                "text": "format"
+                            ".scmName": {
+                                "text": "PAI"
                             },
-                            "g.code image": {
-                                "opacity": 1,
-                                "xlink:href": "/inc/coa/img/block_icon_code_light_on.svg"
+                            ".title": {
+                                "text": "custom function"
+                            },
+                            ".title-info": {
+                                "text": ""
+                            },
+                            "g.branch image": {
+                                "opacity": 1
                             },
                             "g.delete": {
                                 "display": "none"
@@ -1686,56 +1607,66 @@
                             },
                             "g.notes": {
                                 "display": "block"
-                            },
-                            "g.notes image": {
-                                "opacity": 1
                             }
                         },
-                        "block_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\")\n\n    run_query_1(container=container)\n\n    return",
+                        "block_code": "def Create_Containers_From_List(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('Create_Containers_From_List() called')\n    \n    custom_function_result_0 = phantom.collect2(container=container, datapath=['Filter_List:custom_function_result.data.filtered_list'], action_results=results )\n    literal_values_0 = [\n        [\n            \"vipeer\",\n        ],\n    ]\n\n    parameters = []\n\n    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]\n\n    for item0 in literal_values_0:\n        parameters.append({\n            'to_be_containerized': custom_function_result_0_0,\n            'container_label': item0[0],\n        })\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################    \n\n    # call custom function \"PAI/L5_CF_Create_Containers_From_List_py3\", returns the custom_function_run_id\n    phantom.custom_function(custom_function='PAI/L5_CF_Create_Containers_From_List_py3', parameters=parameters, name='Create_Containers_From_List')\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
-                        "callsback": false,
+                        "callsback": true,
+                        "cfDisplayPath": "PAI/L5_CF_Create_Containers_From_List_py3",
+                        "cfInputs": {
+                            "container_label": {
+                                "collectionType": "literal_values",
+                                "dataPath": "vipeer",
+                                "paramName": "item0[0]",
+                                "type": "item"
+                            },
+                            "to_be_containerized": {
+                                "collectionType": "custom_function_result",
+                                "dataPath": "Filter_List:custom_function_result.data.filtered_list",
+                                "paramName": "custom_function_result_0_0",
+                                "type": "list"
+                            }
+                        },
+                        "color": "",
                         "connected_to_start": true,
-                        "connection_name": "",
-                        "connection_type": "",
+                        "connection_name": "Filter List",
+                        "connection_type": "action",
+                        "container_label-1": "vipeer",
+                        "currentVersion": true,
+                        "customCodeEndLineOffset": 7,
+                        "customCodeStartLine": 22,
+                        "customFunction": "PAI/L5_CF_Create_Containers_From_List_py3",
+                        "customFunctionId": null,
                         "custom_callback": "",
-                        "custom_code": "def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('splunk_query() called')\n    \n    template = \"\"\"| savedsearch peer_hosts server={0}{1}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"artifact:*.cef.destinationHostName\",\n        \"artifact:*.cef.destinationAddress\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"splunk_query\",drop_none=True)\n\n    run_query_1(container=container)\n\n    return",
+                        "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "splunk query",
+                        "custom_name": "Create Containers From List",
+                        "delay": 0,
                         "description": "",
-                        "format": "format",
+                        "draftMode": false,
+                        "existingCF": true,
+                        "functionBlock": "custom function",
                         "has_custom": false,
-                        "has_custom_block": true,
+                        "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "36ce4146-a224-4b51-8c87-b62704f3bee8",
+                        "id": "3a5b9030-5a40-4185-b062-62fe868be086",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 50,
-                        "line_start": 33,
+                        "line_end": 155,
+                        "line_start": 121,
                         "message": "Configuring now",
-                        "name": "format",
+                        "name": "L5_CF_Create_Containers_From_List_py3",
                         "notes": "",
                         "number": 1,
-                        "order": 3,
+                        "order": 6,
                         "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "artifact:*.cef.destinationHostName"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "artifact:*.cef.destinationAddress"
-                            }
+                            "out"
                         ],
                         "ports": {
                             "groups": {
@@ -1790,23 +1721,69 @@
                             }
                         },
                         "position": {
-                            "x": 260,
+                            "x": 1500,
                             "y": 240
                         },
                         "previous_function": "",
-                        "previous_name": "splunk_query",
-                        "show_number": true,
+                        "previous_name": "Create_Containers_From_List",
+                        "selectedCustomFunction": {
+                            "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
+                            "draftMode": false,
+                            "id": 25,
+                            "inputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List_py3",
+                                    "contains_type": [],
+                                    "custom_function": 25,
+                                    "description": "List of Lists for things to be containerized.",
+                                    "id": 75,
+                                    "input_type": "list",
+                                    "name": "to_be_containerized",
+                                    "placeholder": ""
+                                },
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List_py3",
+                                    "contains_type": [],
+                                    "custom_function": 25,
+                                    "description": "This will be the label applied to the container",
+                                    "id": 76,
+                                    "input_type": "item",
+                                    "name": "container_label",
+                                    "placeholder": "events"
+                                }
+                            ],
+                            "name": "L5_CF_Create_Containers_From_List_py3",
+                            "outputs": [
+                                {
+                                    "_pretty_custom_function": "L5_CF_Create_Containers_From_List_py3",
+                                    "contains_type": [],
+                                    "custom_function": 25,
+                                    "data_path": "new_container_ids",
+                                    "description": "List of container id's that have been created by this Custom Function.",
+                                    "id": 35
+                                }
+                            ],
+                            "playbooks": {
+                                "draft_playbooks": [],
+                                "draft_version_id": null,
+                                "playbooks": []
+                            },
+                            "scmId": 6,
+                            "scmName": "PAI"
+                        },
+                        "show_number": false,
                         "size": {
                             "height": 100,
                             "width": 180
                         },
-                        "state": "format",
+                        "state": "repo",
                         "status": "",
-                        "template": "| savedsearch peer_hosts server={0}{1}",
-                        "title": "format",
-                        "type": "coa.Format",
+                        "title": "custom function",
+                        "to_be_containerized-0": "Filter_List:custom_function_result.data.filtered_list",
+                        "type": "coa.CustomFunctionBlock",
+                        "userGeneratedCode": "    # Write your custom code here...",
                         "warn": false,
-                        "z": 83
+                        "z": 89
                     }
                 ]
             },
@@ -1814,9 +1791,9 @@
         },
         "python_version": "3",
         "schema": 4,
-        "version": "4.9.34514"
+        "version": "4.10.0.40961"
     },
-    "create_time": "2021-01-22T03:47:10.961915+00:00",
+    "create_time": "2021-01-22T04:17:08.781780+00:00",
     "draft_mode": false,
     "labels": [
         "*"

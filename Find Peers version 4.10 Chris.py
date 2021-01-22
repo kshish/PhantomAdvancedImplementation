@@ -26,22 +26,21 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'display': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['splunk'], callback=Get_Query_Results, name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esa100'], callback=Get_Query_Results, name="run_query_1")
 
     return
 
 def splunk_query(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('splunk_query() called')
     
-    template = """| savedsearch peer_hosts server={0}{1}"""
+    template = """| savedsearch find_peers server={0}"""
 
     # parameter list for template variable replacement
     parameters = [
-        "artifact:*.cef.destinationHostName",
-        "artifact:*.cef.destinationAddress",
+        "artifact:*.cef.destination",
     ]
 
-    phantom.format(container=container, template=template, parameters=parameters, name="splunk_query",drop_none=True)
+    phantom.format(container=container, template=template, parameters=parameters, name="splunk_query")
 
     run_query_1(container=container)
 
@@ -50,7 +49,7 @@ def splunk_query(action=None, success=None, container=None, results=None, handle
 def Get_Query_Results(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('Get_Query_Results() called')
     
-    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )
+    action_results_data_0 = phantom.collect2(container=container, datapath=['run_query_1:action_result.data.*.peer', 'run_query_1:action_result.data.*.priority', 'run_query_1:action_result.data.*.count', 'run_query_1:action_result.parameter.context.artifact_id'], action_results=results )
     container_property_0 = [
         [
             container.get("id"),
@@ -66,8 +65,8 @@ def Get_Query_Results(action=None, success=None, container=None, results=None, h
     for item0 in container_property_0:
         parameters.append({
             'peer': action_results_data_0_0,
-            'count': action_results_data_0_1,
-            'priority': action_results_data_0_2,
+            'priority': action_results_data_0_1,
+            'count': action_results_data_0_2,
             'container': item0[0],
         })
     ################################################################################
@@ -80,8 +79,8 @@ def Get_Query_Results(action=None, success=None, container=None, results=None, h
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "local/L5_CF_Get_Query_Results", returns the custom_function_run_id
-    phantom.custom_function(custom_function='local/L5_CF_Get_Query_Results', parameters=parameters, name='Get_Query_Results', callback=Filter_List)
+    # call custom function "PAI/L5_CF_Get_Query_Results_py3", returns the custom_function_run_id
+    phantom.custom_function(custom_function='PAI/L5_CF_Get_Query_Results_py3', parameters=parameters, name='Get_Query_Results', callback=Filter_List)
 
     return
 
@@ -91,18 +90,18 @@ def Filter_List(action=None, success=None, container=None, results=None, handle=
     custom_function_result_0 = phantom.collect2(container=container, datapath=['Get_Query_Results:custom_function_result.data.results_list'], action_results=results )
     literal_values_0 = [
         [
-            "critical, high, medium",
+            "critical, high",
         ],
     ]
 
     parameters = []
 
-    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]
     literal_values_0_0 = [item[0] for item in literal_values_0]
+    custom_function_result_0_0 = [item[0] for item in custom_function_result_0]
 
     parameters.append({
-        'list_obj': custom_function_result_0_0,
         'filter_items': literal_values_0_0,
+        'list_obj': custom_function_result_0_0,
     })
     ################################################################################
     ## Custom Code Start
@@ -114,8 +113,8 @@ def Filter_List(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "local/L5_CF_Filter_List", returns the custom_function_run_id
-    phantom.custom_function(custom_function='local/L5_CF_Filter_List', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)
+    # call custom function "PAI/L5_CF_Filter_List_py3", returns the custom_function_run_id
+    phantom.custom_function(custom_function='PAI/L5_CF_Filter_List_py3', parameters=parameters, name='Filter_List', callback=Create_Containers_From_List)
 
     return
 
@@ -125,7 +124,7 @@ def Create_Containers_From_List(action=None, success=None, container=None, resul
     custom_function_result_0 = phantom.collect2(container=container, datapath=['Filter_List:custom_function_result.data.filtered_list'], action_results=results )
     literal_values_0 = [
         [
-            "events",
+            "vipeer",
         ],
     ]
 
@@ -148,8 +147,8 @@ def Create_Containers_From_List(action=None, success=None, container=None, resul
     ## Custom Code End
     ################################################################################    
 
-    # call custom function "local/L5_CF_Create_Containers_From_List", returns the custom_function_run_id
-    phantom.custom_function(custom_function='local/L5_CF_Create_Containers_From_List', parameters=parameters, name='Create_Containers_From_List')
+    # call custom function "PAI/L5_CF_Create_Containers_From_List_py3", returns the custom_function_run_id
+    phantom.custom_function(custom_function='PAI/L5_CF_Create_Containers_From_List_py3', parameters=parameters, name='Create_Containers_From_List')
 
     return
 
