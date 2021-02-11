@@ -28,7 +28,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['esaabb100'], name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esaabb100'], callback=format_2, name="run_query_1")
 
     return
 
@@ -45,6 +45,53 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
     run_query_1(container=container)
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """peer {2}
+
+  communicated {1} with {0} with severity {3}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.data.*.peer",
+        "run_query_1:action_result.data.*.count",
+        "artifact:*.cef.destinationHostName",
+        "run_query_1:action_result.data.*.priority",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    prompt_1(container=container)
+
+    return
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('prompt_1() called')
+    
+    # set user and message variables for phantom.prompt call
+    user = "admin"
+    message = """{0}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "format_2:formatted_data.*",
+    ]
+
+    #responses:
+    response_types = [
+        {
+            "prompt": "",
+            "options": {
+                "type": "message",
+            },
+        },
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
 
     return
 
