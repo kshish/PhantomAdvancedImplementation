@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "c179219bbb05d20e3bc60a75c91d448f166030e8",
+            "hash": "7618aff76dbf7db123643003fe1a25fae32ebdb5",
             "joint": {
                 "cells": [
                     {
@@ -863,170 +863,6 @@
                     {
                         "active": false,
                         "angle": 0,
-                        "approver": "admin",
-                        "approver_display": "admin",
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".number": {
-                                "text": 1
-                            },
-                            ".outPorts>.port-out": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out>.port-body": {
-                                "port": {
-                                    "id": "out",
-                                    "type": "out"
-                                }
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"format_2:formatted_data.*\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": true,
-                        "connected_to_start": true,
-                        "connection_name": "run query",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "",
-                        "description": "",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "bdabaad5-a8e2-4248-8ee3-6d1ac848cb4a",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 108,
-                        "line_start": 82,
-                        "message": "{0}",
-                        "name": "prompt",
-                        "notes": "",
-                        "number": 1,
-                        "order": 5,
-                        "outPorts": [
-                            "out"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "format_2:formatted_data.*"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1280,
-                            "y": 80
-                        },
-                        "previous_function": "",
-                        "previous_name": "prompt_1",
-                        "respond_in": "30",
-                        "response_key": "Message",
-                        "response_options": [],
-                        "response_type": "list",
-                        "responses": [
-                            {
-                                "response_key": "Message",
-                                "response_options": [],
-                                "response_prompt": "",
-                                "response_type": "message"
-                            }
-                        ],
-                        "show_number": true,
-                        "size": {
-                            "height": 80,
-                            "width": 80
-                        },
-                        "state": "prompt",
-                        "status": "",
-                        "type": "coa.Prompt",
-                        "warn": false,
-                        "z": 18
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
                         "attrs": {
                             ".background": {
                                 "fill": "#000000",
@@ -1233,6 +1069,45 @@
                         "z": 25
                     },
                     {
+                        "attrs": {
+                            ".connection": {
+                                "stroke": "#818D99",
+                                "stroke-width": 2
+                            },
+                            ".marker-target": {
+                                "d": "M 10 0 L 0 5 L 10 10 z",
+                                "fill": "#818D99",
+                                "stroke": "#818D99"
+                            }
+                        },
+                        "connector": {
+                            "args": {
+                                "radius": 5
+                            },
+                            "name": "rounded"
+                        },
+                        "endDirections": [
+                            "left"
+                        ],
+                        "id": "ce366728-5a50-406c-8e02-2d9b48bc4b4a",
+                        "router": {
+                            "name": "metro"
+                        },
+                        "source": {
+                            "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
+                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "startDirections": [
+                            "right"
+                        ],
+                        "target": {
+                            "id": "674638ce-a174-4120-83ed-7bbb4cdee69a",
+                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        },
+                        "type": "link",
+                        "z": 27
+                    },
+                    {
                         "active": false,
                         "angle": 0,
                         "attrs": {
@@ -1244,7 +1119,7 @@
                                 "fill": "#3C444D"
                             },
                             ".format": {
-                                "text": "format comment"
+                                "text": "format 2"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1279,11 +1154,14 @@
                             "g.error": {
                                 "opacity": 0
                             },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"peer {2}\n\n%%\n*_communicated {1} with {0} with severity {3}_*\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.data.*.peer\",\n        \"run_query_1:action_result.data.*.count\",\n        \"artifact:*.cef.destinationHostName\",\n        \"run_query_1:action_result.data.*.priority\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    prompt_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1293,27 +1171,27 @@
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "format comment",
+                        "custom_name": "",
                         "description": "",
                         "format": "format",
                         "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
+                        "id": "796dc68e-bfeb-43ba-a66a-b86778b174c4",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 155,
-                        "line_start": 138,
+                        "line_end": 82,
+                        "line_start": 59,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
-                        "number": 3,
-                        "order": 7,
+                        "number": 2,
+                        "order": 4,
                         "outPorts": [
                             "out-1"
                         ],
@@ -1321,12 +1199,22 @@
                             {
                                 "position": 0,
                                 "type": "",
-                                "value": "run_query_1:action_result.summary.total_events"
+                                "value": "run_query_1:action_result.data.*.peer"
                             },
                             {
                                 "position": 1,
                                 "type": "",
-                                "value": "artifact:*.cef.destination"
+                                "value": "run_query_1:action_result.data.*.count"
+                            },
+                            {
+                                "position": 2,
+                                "type": "",
+                                "value": "artifact:*.cef.destinationHostName"
+                            },
+                            {
+                                "position": 3,
+                                "type": "",
+                                "value": "run_query_1:action_result.data.*.priority"
                             }
                         ],
                         "ports": {
@@ -1382,11 +1270,11 @@
                             }
                         },
                         "position": {
-                            "x": 1020,
-                            "y": 320
+                            "x": 980,
+                            "y": 80
                         },
                         "previous_function": "",
-                        "previous_name": "format_comment",
+                        "previous_name": "format_2",
                         "show_number": true,
                         "size": {
                             "height": 100,
@@ -1394,50 +1282,175 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "There were {0} number of peers this server {1}communicated",
+                        "template": "peer {2}\n\n%%\n*_communicated {1} with {0} with severity {3}_*\n%%",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 26
+                        "z": 29
                     },
                     {
+                        "active": false,
+                        "angle": 0,
+                        "approver": "admin",
+                        "approver_display": "admin",
                         "attrs": {
-                            ".connection": {
-                                "stroke": "#818D99",
-                                "stroke-width": 2
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
                             },
-                            ".marker-target": {
-                                "d": "M 10 0 L 0 5 L 10 10 z",
-                                "fill": "#818D99",
-                                "stroke": "#818D99"
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".number": {
+                                "text": 1
+                            },
+                            ".outPorts>.port-out": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out>.port-body": {
+                                "port": {
+                                    "id": "out",
+                                    "type": "out"
+                                }
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
                             }
                         },
-                        "connector": {
-                            "args": {
-                                "radius": 5
-                            },
-                            "name": "rounded"
-                        },
-                        "endDirections": [
-                            "left"
+                        "block_code": "def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('prompt_1() called')\n    \n    # set user and message variables for phantom.prompt call\n    user = \"admin\"\n    message = \"\"\"{0}\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"format_2:formatted_data.*\",\n    ]\n\n    #responses:\n    response_types = [\n        {\n            \"prompt\": \"\",\n            \"options\": {\n                \"type\": \"message\",\n            },\n        },\n    ]\n\n    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name=\"prompt_1\", parameters=parameters, response_types=response_types)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": true,
+                        "connected_to_start": true,
+                        "connection_name": "run query",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "",
+                        "description": "",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "bdabaad5-a8e2-4248-8ee3-6d1ac848cb4a",
+                        "inPorts": [
+                            "in"
                         ],
-                        "id": "ce366728-5a50-406c-8e02-2d9b48bc4b4a",
-                        "router": {
-                            "name": "metro"
-                        },
-                        "source": {
-                            "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
-                            "selector": "> g:nth-child(1) > g:nth-child(2) > g:nth-child(1) > circle:nth-child(1)"
-                        },
-                        "startDirections": [
-                            "right"
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 108,
+                        "line_start": 82,
+                        "message": "{0}",
+                        "name": "prompt",
+                        "notes": "",
+                        "number": 1,
+                        "order": 5,
+                        "outPorts": [
+                            "out"
                         ],
-                        "target": {
-                            "id": "674638ce-a174-4120-83ed-7bbb4cdee69a",
-                            "selector": "> g:nth-child(1) > g:nth-child(1) > g:nth-child(1) > circle:nth-child(1)"
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "format_2:formatted_data.*"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
                         },
-                        "type": "link",
-                        "z": 27
+                        "position": {
+                            "x": 1280,
+                            "y": 80
+                        },
+                        "previous_function": "",
+                        "previous_name": "prompt_1",
+                        "respond_in": "30",
+                        "response_key": "Message",
+                        "response_options": [],
+                        "response_type": "list",
+                        "responses": [
+                            {
+                                "response_key": "Message",
+                                "response_options": [],
+                                "response_prompt": "",
+                                "response_type": "message"
+                            }
+                        ],
+                        "show_number": true,
+                        "size": {
+                            "height": 80,
+                            "width": 80
+                        },
+                        "state": "prompt",
+                        "status": "",
+                        "type": "coa.Prompt",
+                        "warn": false,
+                        "z": 30
                     },
                     {
                         "action": "update event",
@@ -1446,7 +1459,7 @@
                         "active_keys": {},
                         "active_values": {
                             "comment": "format_comment:formatted_data",
-                            "event_ids": "artifact:*.cef.notableId",
+                            "event_ids": "artifact:*.cef.eventd",
                             "integer_status": "",
                             "owner": "",
                             "status": "in progress",
@@ -1477,7 +1490,7 @@
                                 "count": 0,
                                 "fields": {
                                     "comment": "format_comment:formatted_data",
-                                    "event_ids": "artifact:*.cef.notableId",
+                                    "event_ids": "artifact:*.cef.eventd",
                                     "integer_status": "",
                                     "owner": "",
                                     "status": "in progress",
@@ -1737,7 +1750,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_event_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_event_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.notableId', 'artifact:*.id'])\n    formatted_data_1 = phantom.get_format_data(name='format_comment')\n\n    parameters = []\n    \n    # build parameters list for 'update_event_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'event_ids': container_item[0],\n                'owner': \"\",\n                'status': \"in progress\",\n                'integer_status': \"\",\n                'urgency': \"\",\n                'comment': formatted_data_1,\n                'wait_for_confirmation': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update event\", parameters=parameters, assets=['esaabb100'], name=\"update_event_1\", parent_action=action)\n\n    return",
+                        "block_code": "def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_event_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_event_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventd', 'artifact:*.id'])\n    formatted_data_1 = phantom.get_format_data(name='format_comment')\n\n    parameters = []\n    \n    # build parameters list for 'update_event_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'event_ids': container_item[0],\n                'owner': \"\",\n                'status': \"in progress\",\n                'integer_status': \"\",\n                'urgency': \"\",\n                'comment': formatted_data_1,\n                'wait_for_confirmation': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update event\", parameters=parameters, assets=['esaabb100'], name=\"update_event_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1844,7 +1857,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 28
+                        "z": 31
                     },
                     {
                         "active": false,
@@ -1858,7 +1871,7 @@
                                 "fill": "#3C444D"
                             },
                             ".format": {
-                                "text": "format 2"
+                                "text": "format comment"
                             },
                             ".inPorts>.port-in": {
                                 "ref": ".background",
@@ -1893,14 +1906,11 @@
                             "g.error": {
                                 "opacity": 0
                             },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
                             "g.notes": {
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"peer {2}\n\n%%\n*_communicated {1} with {0} with severity {3}_*\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.data.*.peer\",\n        \"run_query_1:action_result.data.*.count\",\n        \"artifact:*.cef.destinationHostName\",\n        \"run_query_1:action_result.data.*.priority\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    prompt_1(container=container)\n\n    return",
+                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1910,27 +1920,27 @@
                         "custom_callback": "",
                         "custom_code": "",
                         "custom_join": "",
-                        "custom_name": "",
+                        "custom_name": "format comment",
                         "description": "",
                         "format": "format",
                         "has_custom": false,
                         "has_custom_block": false,
                         "has_custom_callback": false,
                         "has_custom_join": false,
-                        "id": "796dc68e-bfeb-43ba-a66a-b86778b174c4",
+                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
                         "inPorts": [
                             "in"
                         ],
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 82,
-                        "line_start": 59,
+                        "line_end": 155,
+                        "line_start": 138,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
-                        "number": 2,
-                        "order": 4,
+                        "number": 3,
+                        "order": 7,
                         "outPorts": [
                             "out-1"
                         ],
@@ -1938,22 +1948,12 @@
                             {
                                 "position": 0,
                                 "type": "",
-                                "value": "run_query_1:action_result.data.*.peer"
+                                "value": "run_query_1:action_result.summary.total_events"
                             },
                             {
                                 "position": 1,
                                 "type": "",
-                                "value": "run_query_1:action_result.data.*.count"
-                            },
-                            {
-                                "position": 2,
-                                "type": "",
-                                "value": "artifact:*.cef.destinationHostName"
-                            },
-                            {
-                                "position": 3,
-                                "type": "",
-                                "value": "run_query_1:action_result.data.*.priority"
+                                "value": "artifact:*.cef.destination"
                             }
                         ],
                         "ports": {
@@ -2009,11 +2009,11 @@
                             }
                         },
                         "position": {
-                            "x": 980,
-                            "y": 80
+                            "x": 1020,
+                            "y": 320
                         },
                         "previous_function": "",
-                        "previous_name": "format_2",
+                        "previous_name": "format_comment",
                         "show_number": true,
                         "size": {
                             "height": 100,
@@ -2021,11 +2021,11 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "peer {2}\n\n%%\n*_communicated {1} with {0} with severity {3}_*\n%%",
+                        "template": "There were {0} number of peers this server {1}communicated",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 29
+                        "z": 32
                     }
                 ]
             },
@@ -2035,7 +2035,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-02-11T17:22:18.020386+00:00",
+    "create_time": "2021-02-11T17:25:16.578368+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
