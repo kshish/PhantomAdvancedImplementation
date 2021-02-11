@@ -28,7 +28,15 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['esaabb100'], callback=format_2, name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['esaabb100'], callback=run_query_1_callback, name="run_query_1")
+
+    return
+
+def run_query_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):
+    phantom.debug('run_query_1_callback() called')
+    
+    format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
+    format_comment(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)
 
     return
 
@@ -94,6 +102,53 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     ]
 
     phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
+
+    return
+
+def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('update_event_1() called')
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
+    # collect data for 'update_event_1' call
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.notableId', 'artifact:*.id'])
+    formatted_data_1 = phantom.get_format_data(name='format_comment')
+
+    parameters = []
+    
+    # build parameters list for 'update_event_1' call
+    for container_item in container_data:
+        if container_item[0]:
+            parameters.append({
+                'event_ids': container_item[0],
+                'owner': "",
+                'status': "in progress",
+                'integer_status': "",
+                'urgency': "",
+                'comment': formatted_data_1,
+                'wait_for_confirmation': "",
+                # context (artifact id) is added to associate results with the artifact
+                'context': {'artifact_id': container_item[1]},
+            })
+
+    phantom.act(action="update event", parameters=parameters, assets=['esaabb100'], name="update_event_1", parent_action=action)
+
+    return
+
+def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_comment() called')
+    
+    template = """There were {0} number of peers this server {1}communicated"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.summary.total_events",
+        "artifact:*.cef.destination",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_comment")
+
+    update_event_1(container=container)
 
     return
 
