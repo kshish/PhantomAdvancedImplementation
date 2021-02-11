@@ -7,14 +7,16 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'format_1' block
-    format_1(container=container)
+    # call 'cf_community_list_merge_1' block
+    cf_community_list_merge_1(container=container)
 
     return
 
 def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('run_query_1() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'run_query_1' call
     formatted_data_1 = phantom.get_format_data(name='format_1')
 
@@ -47,7 +49,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "artifact:*.cef.destination",
+        "cf_community_list_merge_1:custom_function_result.data.*.item",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
@@ -149,6 +151,43 @@ def format_comment(action=None, success=None, container=None, results=None, hand
     phantom.format(container=container, template=template, parameters=parameters, name="format_comment")
 
     update_event_1(container=container)
+
+    return
+
+def cf_community_list_merge_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_list_merge_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.destinationAddress', 'artifact:*.cef.destinationHostName', 'artifact:*.id'])
+
+    parameters = []
+
+    container_data_0_0 = [item[0] for item in container_data_0]
+    container_data_0_1 = [item[1] for item in container_data_0]
+
+    parameters.append({
+        'input_1': container_data_0_0,
+        'input_2': container_data_0_1,
+        'input_3': None,
+        'input_4': None,
+        'input_5': None,
+        'input_6': None,
+        'input_7': None,
+        'input_8': None,
+        'input_9': None,
+        'input_10': None,
+    })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/list_merge", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/list_merge', parameters=parameters, name='cf_community_list_merge_1', callback=format_1)
 
     return
 
