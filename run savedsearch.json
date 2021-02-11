@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "ffc687317dcf0c54b05f52774979f9a85e9d473a",
+            "hash": "40332c1f419fa8a38e949cbe40af17d989a88719",
             "joint": {
                 "cells": [
                     {
@@ -217,8 +217,8 @@
                         "join_code": "# read-only block view not available",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 207,
-                        "line_start": 194,
+                        "line_end": 208,
+                        "line_start": 195,
                         "name": "",
                         "notes": "",
                         "number": 0,
@@ -566,8 +566,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 84,
-                        "line_start": 61,
+                        "line_end": 85,
+                        "line_start": 62,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -738,8 +738,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 110,
-                        "line_start": 84,
+                        "line_end": 111,
+                        "line_start": 85,
                         "message": "{0}",
                         "name": "prompt",
                         "notes": "",
@@ -1159,8 +1159,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 140,
-                        "line_start": 110,
+                        "line_end": 141,
+                        "line_start": 111,
                         "message": "Configuring now",
                         "name": "update event",
                         "notes": "",
@@ -1429,8 +1429,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 194,
-                        "line_start": 157,
+                        "line_end": 195,
+                        "line_start": 158,
                         "message": "Configuring now",
                         "name": "list_merge",
                         "notes": "",
@@ -1708,6 +1708,177 @@
                                 "fill": "#3C444D"
                             },
                             ".format": {
+                                "text": "format comment"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.error image": {
+                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "run query",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "format comment",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 158,
+                        "line_start": 141,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 3,
+                        "order": 7,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "run_query_1:action_result.summary.total_events"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "artifact:*.cef.destination"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1020,
+                            "y": 320
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_comment",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "There were {0} number of peers this server {1}communicated",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 40
+                    },
+                    {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
                                 "text": "format 1"
                             },
                             ".inPorts>.port-in": {
@@ -1780,8 +1951,8 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 61,
-                        "line_start": 45,
+                        "line_end": 62,
+                        "line_start": 46,
                         "message": "Configuring now",
                         "name": "format",
                         "notes": "",
@@ -1866,7 +2037,7 @@
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
-                        "z": 38
+                        "z": 41
                     },
                     {
                         "action": "run query",
@@ -1874,10 +2045,10 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "command": "",
+                            "command": "search",
                             "display": "",
                             "parse_only": "",
-                            "query": "format_1:formatted_data"
+                            "query": "format_1:formatted_data.*"
                         },
                         "angle": 0,
                         "app": "Splunk",
@@ -1902,10 +2073,10 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "command": "",
+                                    "command": "search",
                                     "display": "",
                                     "parse_only": "",
-                                    "query": "format_1:formatted_data"
+                                    "query": "format_1:formatted_data.*"
                                 },
                                 "has_app": true,
                                 "id": 9,
@@ -2170,9 +2341,9 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'command': \"\",\n        'display': \"\",\n        'parse_only': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['esaabb100'], callback=run_query_1_callback, name=\"run_query_1\")\n\n    return",
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1__as_list')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    for formatted_part_1 in formatted_data_1:\n        parameters.append({\n            'query': formatted_part_1,\n            'command': \"search\",\n            'display': \"\",\n            'parse_only': \"\",\n        })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['esaabb100'], callback=run_query_1_callback, name=\"run_query_1\")\n\n    return",
                         "callback_code": "def run_query_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None):\n    phantom.debug('run_query_1_callback() called')\n    \n    format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n    format_comment(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function)\n\n    return",
-                        "callback_start": 37,
+                        "callback_start": 38,
                         "callsback": true,
                         "color": "",
                         "connected_to_start": true,
@@ -2195,7 +2366,7 @@
                         "join_code": "",
                         "join_optional": [],
                         "join_start": 1,
-                        "line_end": 45,
+                        "line_end": 46,
                         "line_start": 15,
                         "message": "Configuring now",
                         "name": "run query",
@@ -2277,178 +2448,7 @@
                         "title": "Investigate",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 39
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "format comment"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.error image": {
-                                "xlink:href": "/inc/coa/img/block_icon_warn.svg"
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "run query",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "format comment",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 157,
-                        "line_start": 140,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 3,
-                        "order": 7,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "run_query_1:action_result.summary.total_events"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "artifact:*.cef.destination"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1020,
-                            "y": 320
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_comment",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "There were {0} number of peers this server {1}communicated",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 40
+                        "z": 42
                     }
                 ]
             },
@@ -2458,7 +2458,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-02-11T18:11:52.293987+00:00",
+    "create_time": "2021-02-11T18:16:33.159767+00:00",
     "draft_mode": false,
     "labels": [
         "malware"

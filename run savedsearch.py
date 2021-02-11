@@ -18,17 +18,18 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'run_query_1' call
-    formatted_data_1 = phantom.get_format_data(name='format_1')
+    formatted_data_1 = phantom.get_format_data(name='format_1__as_list')
 
     parameters = []
     
     # build parameters list for 'run_query_1' call
-    parameters.append({
-        'query': formatted_data_1,
-        'command': "",
-        'display': "",
-        'parse_only': "",
-    })
+    for formatted_part_1 in formatted_data_1:
+        parameters.append({
+            'query': formatted_part_1,
+            'command': "search",
+            'display': "",
+            'parse_only': "",
+        })
 
     phantom.act(action="run query", parameters=parameters, assets=['esaabb100'], callback=run_query_1_callback, name="run_query_1")
 
