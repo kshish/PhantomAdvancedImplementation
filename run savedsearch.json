@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "7618aff76dbf7db123643003fe1a25fae32ebdb5",
+            "hash": "8954e66be518fec5f528e5d3a32032317120d69c",
             "joint": {
                 "cells": [
                     {
@@ -1453,13 +1453,181 @@
                         "z": 30
                     },
                     {
+                        "active": false,
+                        "angle": 0,
+                        "attrs": {
+                            ".background": {
+                                "fill": "#000000",
+                                "stroke": "#5C6773"
+                            },
+                            ".color-band": {
+                                "fill": "#3C444D"
+                            },
+                            ".format": {
+                                "text": "format comment"
+                            },
+                            ".inPorts>.port-in": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".inPorts>.port-in>.port-body": {
+                                "port": {
+                                    "id": "in",
+                                    "type": "in"
+                                }
+                            },
+                            ".message": {
+                                "opacity": 0,
+                                "text": "Configuring now"
+                            },
+                            ".outPorts>.port-out-1": {
+                                "ref": ".background",
+                                "ref-x": 0.5
+                            },
+                            ".outPorts>.port-out-1>.port-body": {
+                                "port": {
+                                    "id": "out-1",
+                                    "type": "out"
+                                }
+                            },
+                            ".title": {
+                                "text": "format"
+                            },
+                            "g.delete": {
+                                "display": "none"
+                            },
+                            "g.error": {
+                                "opacity": 0
+                            },
+                            "g.notes": {
+                                "display": "block"
+                            }
+                        },
+                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
+                        "callback_code": "",
+                        "callback_start": 1,
+                        "callsback": false,
+                        "connected_to_start": true,
+                        "connection_name": "run query",
+                        "connection_type": "action",
+                        "custom_callback": "",
+                        "custom_code": "",
+                        "custom_join": "",
+                        "custom_name": "format comment",
+                        "description": "",
+                        "format": "format",
+                        "has_custom": false,
+                        "has_custom_block": false,
+                        "has_custom_callback": false,
+                        "has_custom_join": false,
+                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
+                        "inPorts": [
+                            "in"
+                        ],
+                        "join_code": "",
+                        "join_optional": [],
+                        "join_start": 1,
+                        "line_end": 155,
+                        "line_start": 138,
+                        "message": "Configuring now",
+                        "name": "format",
+                        "notes": "",
+                        "number": 3,
+                        "order": 7,
+                        "outPorts": [
+                            "out-1"
+                        ],
+                        "parameters": [
+                            {
+                                "position": 0,
+                                "type": "",
+                                "value": "run_query_1:action_result.summary.total_events"
+                            },
+                            {
+                                "position": 1,
+                                "type": "",
+                                "value": "artifact:*.cef.destination"
+                            }
+                        ],
+                        "ports": {
+                            "groups": {
+                                "in": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "left"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "left"
+                                    }
+                                },
+                                "out": {
+                                    "attrs": {
+                                        ".port-body": {
+                                            "fill": "#fff",
+                                            "magnet": true,
+                                            "r": 10,
+                                            "stroke": "#000"
+                                        },
+                                        ".port-label": {
+                                            "fill": "#000"
+                                        }
+                                    },
+                                    "label": {
+                                        "position": {
+                                            "args": {
+                                                "y": 10
+                                            },
+                                            "name": "right"
+                                        }
+                                    },
+                                    "position": {
+                                        "name": "right"
+                                    }
+                                }
+                            }
+                        },
+                        "position": {
+                            "x": 1020,
+                            "y": 320
+                        },
+                        "previous_function": "",
+                        "previous_name": "format_comment",
+                        "show_number": true,
+                        "size": {
+                            "height": 100,
+                            "width": 180
+                        },
+                        "state": "format",
+                        "status": "",
+                        "template": "There were {0} number of peers this server {1}communicated",
+                        "title": "format",
+                        "type": "coa.Format",
+                        "warn": false,
+                        "z": 32
+                    },
+                    {
                         "action": "update event",
                         "action_type": "generic",
                         "active": false,
                         "active_keys": {},
                         "active_values": {
                             "comment": "format_comment:formatted_data",
-                            "event_ids": "artifact:*.cef.eventd",
+                            "event_ids": "artifact:*.cef.eventId",
                             "integer_status": "",
                             "owner": "",
                             "status": "in progress",
@@ -1490,7 +1658,7 @@
                                 "count": 0,
                                 "fields": {
                                     "comment": "format_comment:formatted_data",
-                                    "event_ids": "artifact:*.cef.eventd",
+                                    "event_ids": "artifact:*.cef.eventId",
                                     "integer_status": "",
                                     "owner": "",
                                     "status": "in progress",
@@ -1750,7 +1918,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_event_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_event_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventd', 'artifact:*.id'])\n    formatted_data_1 = phantom.get_format_data(name='format_comment')\n\n    parameters = []\n    \n    # build parameters list for 'update_event_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'event_ids': container_item[0],\n                'owner': \"\",\n                'status': \"in progress\",\n                'integer_status': \"\",\n                'urgency': \"\",\n                'comment': formatted_data_1,\n                'wait_for_confirmation': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update event\", parameters=parameters, assets=['esaabb100'], name=\"update_event_1\", parent_action=action)\n\n    return",
+                        "block_code": "def update_event_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('update_event_1() called')\n        \n    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))\n    \n    # collect data for 'update_event_1' call\n    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventId', 'artifact:*.id'])\n    formatted_data_1 = phantom.get_format_data(name='format_comment')\n\n    parameters = []\n    \n    # build parameters list for 'update_event_1' call\n    for container_item in container_data:\n        if container_item[0]:\n            parameters.append({\n                'event_ids': container_item[0],\n                'owner': \"\",\n                'status': \"in progress\",\n                'integer_status': \"\",\n                'urgency': \"\",\n                'comment': formatted_data_1,\n                'wait_for_confirmation': \"\",\n                # context (artifact id) is added to associate results with the artifact\n                'context': {'artifact_id': container_item[1]},\n            })\n\n    phantom.act(action=\"update event\", parameters=parameters, assets=['esaabb100'], name=\"update_event_1\", parent_action=action)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -1857,175 +2025,7 @@
                         "title": "Generic",
                         "type": "coa.Action",
                         "warn": "",
-                        "z": 31
-                    },
-                    {
-                        "active": false,
-                        "angle": 0,
-                        "attrs": {
-                            ".background": {
-                                "fill": "#000000",
-                                "stroke": "#5C6773"
-                            },
-                            ".color-band": {
-                                "fill": "#3C444D"
-                            },
-                            ".format": {
-                                "text": "format comment"
-                            },
-                            ".inPorts>.port-in": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".inPorts>.port-in>.port-body": {
-                                "port": {
-                                    "id": "in",
-                                    "type": "in"
-                                }
-                            },
-                            ".message": {
-                                "opacity": 0,
-                                "text": "Configuring now"
-                            },
-                            ".outPorts>.port-out-1": {
-                                "ref": ".background",
-                                "ref-x": 0.5
-                            },
-                            ".outPorts>.port-out-1>.port-body": {
-                                "port": {
-                                    "id": "out-1",
-                                    "type": "out"
-                                }
-                            },
-                            ".title": {
-                                "text": "format"
-                            },
-                            "g.delete": {
-                                "display": "none"
-                            },
-                            "g.error": {
-                                "opacity": 0
-                            },
-                            "g.notes": {
-                                "display": "block"
-                            }
-                        },
-                        "block_code": "def format_comment(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_comment() called')\n    \n    template = \"\"\"There were {0} number of peers this server {1}communicated\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.summary.total_events\",\n        \"artifact:*.cef.destination\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_comment\")\n\n    update_event_1(container=container)\n\n    return",
-                        "callback_code": "",
-                        "callback_start": 1,
-                        "callsback": false,
-                        "connected_to_start": true,
-                        "connection_name": "run query",
-                        "connection_type": "action",
-                        "custom_callback": "",
-                        "custom_code": "",
-                        "custom_join": "",
-                        "custom_name": "format comment",
-                        "description": "",
-                        "format": "format",
-                        "has_custom": false,
-                        "has_custom_block": false,
-                        "has_custom_callback": false,
-                        "has_custom_join": false,
-                        "id": "a267c815-fc52-44e8-97c4-3c09eba763bf",
-                        "inPorts": [
-                            "in"
-                        ],
-                        "join_code": "",
-                        "join_optional": [],
-                        "join_start": 1,
-                        "line_end": 155,
-                        "line_start": 138,
-                        "message": "Configuring now",
-                        "name": "format",
-                        "notes": "",
-                        "number": 3,
-                        "order": 7,
-                        "outPorts": [
-                            "out-1"
-                        ],
-                        "parameters": [
-                            {
-                                "position": 0,
-                                "type": "",
-                                "value": "run_query_1:action_result.summary.total_events"
-                            },
-                            {
-                                "position": 1,
-                                "type": "",
-                                "value": "artifact:*.cef.destination"
-                            }
-                        ],
-                        "ports": {
-                            "groups": {
-                                "in": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "left"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "left"
-                                    }
-                                },
-                                "out": {
-                                    "attrs": {
-                                        ".port-body": {
-                                            "fill": "#fff",
-                                            "magnet": true,
-                                            "r": 10,
-                                            "stroke": "#000"
-                                        },
-                                        ".port-label": {
-                                            "fill": "#000"
-                                        }
-                                    },
-                                    "label": {
-                                        "position": {
-                                            "args": {
-                                                "y": 10
-                                            },
-                                            "name": "right"
-                                        }
-                                    },
-                                    "position": {
-                                        "name": "right"
-                                    }
-                                }
-                            }
-                        },
-                        "position": {
-                            "x": 1020,
-                            "y": 320
-                        },
-                        "previous_function": "",
-                        "previous_name": "format_comment",
-                        "show_number": true,
-                        "size": {
-                            "height": 100,
-                            "width": 180
-                        },
-                        "state": "format",
-                        "status": "",
-                        "template": "There were {0} number of peers this server {1}communicated",
-                        "title": "format",
-                        "type": "coa.Format",
-                        "warn": false,
-                        "z": 32
+                        "z": 33
                     }
                 ]
             },
@@ -2035,7 +2035,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-02-11T17:25:16.578368+00:00",
+    "create_time": "2021-02-11T17:25:42.955551+00:00",
     "draft_mode": false,
     "labels": [
         "malware"

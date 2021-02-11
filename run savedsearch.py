@@ -111,7 +111,7 @@ def update_event_1(action=None, success=None, container=None, results=None, hand
     #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
     
     # collect data for 'update_event_1' call
-    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventd', 'artifact:*.id'])
+    container_data = phantom.collect2(container=container, datapath=['artifact:*.cef.eventId', 'artifact:*.id'])
     formatted_data_1 = phantom.get_format_data(name='format_comment')
 
     parameters = []
