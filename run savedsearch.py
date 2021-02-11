@@ -39,7 +39,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "artifact:*.cef.destinationHostName",
+        "artifact:*.cef.destination",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
