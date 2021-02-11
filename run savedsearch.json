@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "cbcc0599c76b54a1b6e2ba9774694db28ccb7b4b",
+            "hash": "155ecb8a8fc22bda002ad9bafdc6ab0acd0cab64",
             "joint": {
                 "cells": [
                     {
@@ -546,7 +546,7 @@
                         "active": false,
                         "active_keys": {},
                         "active_values": {
-                            "command": "search",
+                            "command": "",
                             "display": "",
                             "parse_only": "",
                             "query": "format_1:formatted_data"
@@ -574,7 +574,7 @@
                                 "config_type": "asset",
                                 "count": 0,
                                 "fields": {
-                                    "command": "search",
+                                    "command": "",
                                     "display": "",
                                     "parse_only": "",
                                     "query": "format_1:formatted_data"
@@ -842,7 +842,7 @@
                                 "opacity": 1
                             }
                         },
-                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'command': \"search\",\n        'display': \"\",\n        'parse_only': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['esaabb100'], name=\"run_query_1\")\n\n    return",
+                        "block_code": "def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('run_query_1() called')\n\n    # collect data for 'run_query_1' call\n    formatted_data_1 = phantom.get_format_data(name='format_1')\n\n    parameters = []\n    \n    # build parameters list for 'run_query_1' call\n    parameters.append({\n        'query': formatted_data_1,\n        'command': \"\",\n        'display': \"\",\n        'parse_only': \"\",\n    })\n\n    phantom.act(action=\"run query\", parameters=parameters, assets=['esaabb100'], name=\"run_query_1\")\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": true,
@@ -948,7 +948,7 @@
                         "status": "",
                         "title": "Investigate",
                         "type": "coa.Action",
-                        "warn": false,
+                        "warn": "",
                         "z": 13
                     }
                 ]
@@ -959,7 +959,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-02-11T16:56:50.856212+00:00",
+    "create_time": "2021-02-11T16:58:41.060053+00:00",
     "draft_mode": false,
     "labels": [
         "malware"

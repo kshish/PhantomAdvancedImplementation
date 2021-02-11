@@ -23,7 +23,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     # build parameters list for 'run_query_1' call
     parameters.append({
         'query': formatted_data_1,
-        'command': "search",
+        'command': "",
         'display': "",
         'parse_only': "",
     })
