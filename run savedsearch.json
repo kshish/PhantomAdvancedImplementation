@@ -7,7 +7,7 @@
             "clean": true,
             "code_block": "",
             "description": "",
-            "hash": "0ccf0d1da9282acf68b600c25c336cf9015639ca",
+            "hash": "059f60ddf8597fa3cb819e3223107c07aa43e883",
             "joint": {
                 "cells": [
                     {
@@ -1247,7 +1247,7 @@
                                 "display": "block"
                             }
                         },
-                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"peer {2}\n\n%%\ncommunicated {1} with {0} with severity {3}\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.data.*.peer\",\n        \"run_query_1:action_result.data.*.count\",\n        \"artifact:*.cef.destinationHostName\",\n        \"run_query_1:action_result.data.*.priority\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    prompt_1(container=container)\n\n    return",
+                        "block_code": "def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug('format_2() called')\n    \n    template = \"\"\"peer {2}\n\n%%\n*communicated {1} with {0} with severity {3}*\n%%\"\"\"\n\n    # parameter list for template variable replacement\n    parameters = [\n        \"run_query_1:action_result.data.*.peer\",\n        \"run_query_1:action_result.data.*.count\",\n        \"artifact:*.cef.destinationHostName\",\n        \"run_query_1:action_result.data.*.priority\",\n    ]\n\n    phantom.format(container=container, template=template, parameters=parameters, name=\"format_2\")\n\n    prompt_1(container=container)\n\n    return",
                         "callback_code": "",
                         "callback_start": 1,
                         "callsback": false,
@@ -1368,7 +1368,7 @@
                         },
                         "state": "format",
                         "status": "",
-                        "template": "peer {2}\n\n%%\ncommunicated {1} with {0} with severity {3}\n%%",
+                        "template": "peer {2}\n\n%%\n*communicated {1} with {0} with severity {3}*\n%%",
                         "title": "format",
                         "type": "coa.Format",
                         "warn": false,
@@ -1382,7 +1382,7 @@
         "schema": 4,
         "version": "4.10.0.40961"
     },
-    "create_time": "2021-02-11T17:08:59.683497+00:00",
+    "create_time": "2021-02-11T17:10:36.507698+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
