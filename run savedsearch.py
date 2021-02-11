@@ -53,7 +53,9 @@ def format_2(action=None, success=None, container=None, results=None, handle=Non
     
     template = """peer {2}
 
-  communicated {1} with {0} with severity {3}"""
+%%
+communicated {1} with {0} with severity {3}
+%%"""
 
     # parameter list for template variable replacement
     parameters = [
