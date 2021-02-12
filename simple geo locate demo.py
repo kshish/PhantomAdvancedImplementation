@@ -6,7 +6,7 @@ import json
 from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
-    
+    phantom.debug(container)
     # call 'geolocate_ip_1' block
     geolocate_ip_1(container=container)
 
@@ -42,7 +42,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     parameters = [
         "geolocate_ip_1:action_result.data.*.country_name",
     ]
-
+    phantom.debug(parameters)
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
     return
