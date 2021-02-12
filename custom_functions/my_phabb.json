@@ -1,0 +1,28 @@
+{
+    "create_time": "2021-02-12T15:12:18.941433+00:00",
+    "custom_function_id": "1bbe19d13b829406613d4bc952aaf485157a243b",
+    "description": "This is a dejmo of a custoj function",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "chris wuz here",
+            "input_type": "list",
+            "name": "my_ip",
+            "placeholder": "please provide an ip"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "data_path": "hostName",
+            "description": "some host name value "
+        }
+    ],
+    "platform_version": "4.10.0.40961",
+    "python_version": "3"
+}
