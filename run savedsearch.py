@@ -9,9 +9,6 @@ def on_start(container):
     
     # call 'cf_community_list_merge_1' block
     cf_community_list_merge_1(container=container)
-    phantom.debug(container)
-    # call 'custom_function_0' block
-    custom_function_0(container=container)
 
     return
 
@@ -126,18 +123,18 @@ def update_event_1(action=None, success=None, container=None, results=None, hand
     for container_item in container_data:
         if container_item[0]:
             parameters.append({
-                'event_ids': container_item[0],
                 'owner': "",
                 'status': "in progress",
-                'integer_status': "",
-                'urgency': "",
                 'comment': formatted_data_1,
+                'urgency': "",
+                'event_ids': container_item[0],
+                'integer_status': "",
                 'wait_for_confirmation': "",
                 # context (artifact id) is added to associate results with the artifact
                 'context': {'artifact_id': container_item[1]},
             })
 
-    phantom.act(action="update event", parameters=parameters, assets=['esaabb100'], name="update_event_1", parent_action=action)
+    phantom.act(action="update event", parameters=parameters, assets=['esaabb100'], name="update_event_1")
 
     return
 
@@ -192,26 +189,6 @@ def cf_community_list_merge_1(action=None, success=None, container=None, results
 
     # call custom function "community/list_merge", returns the custom_function_run_id
     phantom.custom_function(custom_function='community/list_merge', parameters=parameters, name='cf_community_list_merge_1', callback=format_1)
-
-    return
-
-def custom_function_0(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug('custom_function_0() called')
-    
-    parameters = [{}]
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################    
-
-    # call custom function "", returns the custom_function_run_id
-    phantom.custom_function(custom_function='', parameters=parameters, name='custom_function_0')
 
     return
 
