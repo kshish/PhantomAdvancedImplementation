@@ -1,0 +1,40 @@
+{
+    "create_time": "2021-04-23T17:22:08.041632+00:00",
+    "custom_function_id": "80a2df9c169ec5b0241478637442ffaa7b6a7571",
+    "description": "demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "Map any fields that contain an ip",
+            "input_type": "list",
+            "name": "some_ip",
+            "placeholder": "any CEF field with an ip in it"
+        },
+        {
+            "contains_type": [],
+            "description": "duh!",
+            "input_type": "list",
+            "name": "is_ipv6",
+            "placeholder": "provide true or false value"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [],
+            "data_path": "is_valid_ipv6",
+            "description": ""
+        },
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "valid_ip",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.0.40961",
+    "python_version": "3"
+}
