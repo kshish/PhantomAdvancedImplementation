@@ -1,0 +1,35 @@
+{
+    "create_time": "2021-05-27T19:35:34.196552+00:00",
+    "custom_function_id": "56d476da3edfe9ae459bb7e9b74646f1c9dbb85e",
+    "description": "this is a comment",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "Provide a CEF field  that has an ip address or list in it",
+            "input_type": "item",
+            "name": "my_stuff_input",
+            "placeholder": "222.11.22.33"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "my_stuff_other",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "data_path": "my_stuff_output",
+            "description": ""
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}
