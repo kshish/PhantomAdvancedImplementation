@@ -101,12 +101,13 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     user = "admin"
     message = """The host {0} communicated with these high priority servers:
 
-{1}"""
+{1} number of time {2}"""
 
     # parameter list for template variable replacement
     parameters = [
         "cf_community_string_to_uppercase_1:custom_function_result.data.uppercase_string",
         "run_query_1:action_result.data.*.peer",
+        "run_query_1:action_result.data.*.count",
     ]
 
     #responses:
