@@ -7,8 +7,8 @@ from datetime import datetime, timedelta
 def on_start(container):
     phantom.debug('on_start() called')
     
-    # call 'format_1' block
-    format_1(container=container)
+    # call 'cf_community_string_to_uppercase_1' block
+    cf_community_string_to_uppercase_1(container=container)
 
     return
 
@@ -19,7 +19,7 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
     # parameter list for template variable replacement
     parameters = [
-        "artifact:*.cef.dest_nt_host",
+        "cf_community_string_to_uppercase_1:custom_function_result.data.uppercase_string",
     ]
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
@@ -30,7 +30,9 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
 
 def run_query_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug('run_query_1() called')
-
+        
+    #phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
+    
     # collect data for 'run_query_1' call
     formatted_data_1 = phantom.get_format_data(name='format_1')
 
@@ -45,6 +47,32 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     })
 
     phantom.act(action="run query", parameters=parameters, assets=['splunk07'], name="run_query_1")
+
+    return
+
+def cf_community_string_to_uppercase_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('cf_community_string_to_uppercase_1() called')
+    
+    container_data_0 = phantom.collect2(container=container, datapath=['artifact:*.cef.dest_nt_host', 'artifact:*.id'])
+
+    parameters = []
+
+    for item0 in container_data_0:
+        parameters.append({
+            'input_string': item0[0],
+        })
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################    
+
+    # call custom function "community/string_to_uppercase", returns the custom_function_run_id
+    phantom.custom_function(custom_function='community/string_to_uppercase', parameters=parameters, name='cf_community_string_to_uppercase_1', callback=format_1)
 
     return
 
