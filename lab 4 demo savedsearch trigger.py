@@ -90,7 +90,7 @@ def filter_1(action=None, success=None, container=None, results=None, handle=Non
 
     # call connected blocks if filtered artifacts or results
     if matched_artifacts_1 or matched_results_1:
-        prompt_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+        format_2(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 
@@ -101,13 +101,12 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     user = "admin"
     message = """The host {0} communicated with these high priority servers:
 
-{1} number of time {2}"""
+{1}"""
 
     # parameter list for template variable replacement
     parameters = [
         "cf_community_string_to_uppercase_1:custom_function_result.data.uppercase_string",
-        "run_query_1:action_result.data.*.peer",
-        "run_query_1:action_result.data.*.count",
+        "format_2:formatted_data",
     ]
 
     #responses:
@@ -121,6 +120,25 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     ]
 
     phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
+
+    return
+
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('format_2() called')
+    
+    template = """%%
+server {0} number of times: {1}
+%%"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.data.*.peer",
+        "run_query_1:action_result.data.*.count",
+    ]
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    prompt_1(container=container)
 
     return
 
