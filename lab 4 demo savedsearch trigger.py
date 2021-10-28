@@ -46,7 +46,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
         'parse_only': "",
     })
 
-    phantom.act(action="run query", parameters=parameters, assets=['splunk07'], name="run_query_1")
+    phantom.act(action="run query", parameters=parameters, assets=['splunk07'], callback=filter_1, name="run_query_1")
 
     return
 
@@ -73,6 +73,53 @@ def cf_community_string_to_uppercase_1(action=None, success=None, container=None
 
     # call custom function "community/string_to_uppercase", returns the custom_function_run_id
     phantom.custom_function(custom_function='community/string_to_uppercase', parameters=parameters, name='cf_community_string_to_uppercase_1', callback=format_1)
+
+    return
+
+def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('filter_1() called')
+
+    # collect filtered artifact ids for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        action_results=results,
+        conditions=[
+            ["run_query_1:action_result.data.*.priority", "==", "high"],
+        ],
+        name="filter_1:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        prompt_1(action=action, success=success, container=container, results=results, handle=handle, custom_function=custom_function, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug('prompt_1() called')
+    
+    # set user and message variables for phantom.prompt call
+    user = "admin"
+    message = """The host {0} communicated with these high priority servers:
+
+{1}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "cf_community_string_to_uppercase_1:custom_function_result.data.uppercase_string",
+        "run_query_1:action_result.data.*.peer",
+    ]
+
+    #responses:
+    response_types = [
+        {
+            "prompt": "",
+            "options": {
+                "type": "message",
+            },
+        },
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters, response_types=response_types)
 
     return
 
