@@ -1,0 +1,131 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Uncategorized",
+    "coa": {
+        "data": {
+            "description": "",
+            "edges": [
+                {
+                    "id": "port_0_to_port_2",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "2",
+                    "targetPort": "2_in"
+                }
+            ],
+            "hash": "0211694452bf5331fe5a52366e99cb1a3d097a3c",
+            "nodes": {
+                "0": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_start",
+                        "id": "0",
+                        "type": "start"
+                    },
+                    "errors": {},
+                    "id": "0",
+                    "type": "start",
+                    "x": 1000,
+                    "y": 419.9999999999995
+                },
+                "1": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "on_finish",
+                        "id": "1",
+                        "type": "end"
+                    },
+                    "errors": {},
+                    "id": "1",
+                    "type": "end",
+                    "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
+                    "x": 1000,
+                    "y": 1000
+                },
+                "2": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "L5_CF_Create_Containers_From_List_py3",
+                            "repoName": "chris"
+                        },
+                        "functionId": 1,
+                        "functionName": "L5_CF_Create_Containers_From_List_py3_1",
+                        "id": "2",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "L5_CF_Create_Containers_From_List_py3": {
+                                "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "List of Lists for things to be containerized.",
+                                        "inputType": "list",
+                                        "label": "to_be_containerized",
+                                        "name": "to_be_containerized",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "This will be the label applied to the container",
+                                        "inputType": "item",
+                                        "label": "container_label",
+                                        "name": "container_label",
+                                        "placeholder": "events",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "L5_CF_Create_Containers_From_List_py3",
+                                "name": "L5_CF_Create_Containers_From_List_py3"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "L5_CF_Create_Containers_From_List_py3": {
+                                "container_label": null,
+                                "to_be_containerized": null
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "2",
+                    "type": "utility",
+                    "x": 980,
+                    "y": 564.5
+                }
+            },
+            "notes": ""
+        },
+        "input_spec": [
+            {
+                "contains": [],
+                "description": "",
+                "name": "mylist"
+            }
+        ],
+        "output_spec": null,
+        "playbook_type": "data",
+        "python_version": "3",
+        "schema": "5.0.3",
+        "version": "5.0.1.66250"
+    },
+    "create_time": "2021-10-29T20:30:45.375917+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
