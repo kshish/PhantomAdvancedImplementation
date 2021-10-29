@@ -106,7 +106,7 @@ def run_query_1_callback(action=None, success=None, container=None, results=None
 
     
     prompt_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
-    l5_cf_get_query_results_py3_3(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    l5_cf_get_query_results_py3_4(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
 
 
     return
@@ -207,23 +207,43 @@ def update_event_1(action=None, success=None, container=None, results=None, hand
     return
 
 
-def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("l5_cf_get_query_results_py3_3() called")
+def playbook_create_events_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("playbook_create_events_1() called")
 
-    id_value = container.get("id", None)
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.peer","run_query_1:action_result.data.*.priority","run_query_1:action_result.data.*.count","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+    l5_cf_get_query_results_py3_4__result = phantom.collect2(container=container, datapath=["l5_cf_get_query_results_py3_4:custom_function_result.data.results_list"])
 
-    run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
-    run_query_1_result_item_1 = [item[1] for item in run_query_1_result_data]
-    run_query_1_result_item_2 = [item[2] for item in run_query_1_result_data]
+    l5_cf_get_query_results_py3_4_data_results_list = [item[0] for item in l5_cf_get_query_results_py3_4__result]
+
+    inputs = {
+        "mylist": l5_cf_get_query_results_py3_4_data_results_list,
+    }
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    # call playbook "chris/create events", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("chris/create events", container=container, inputs=inputs)
+
+    return
+
+
+def l5_cf_get_query_results_py3_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("l5_cf_get_query_results_py3_4() called")
 
     parameters = []
 
     parameters.append({
-        "peer": run_query_1_result_item_0,
-        "priority": run_query_1_result_item_1,
-        "count": run_query_1_result_item_2,
-        "container": id_value,
+        "peer": None,
+        "priority": None,
+        "count": None,
+        "container": None,
     })
 
     ################################################################################
@@ -236,26 +256,7 @@ def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, res
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3", callback=playbook_1)
-
-    return
-
-
-def playbook_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("playbook_1() called")
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    # call playbook "undefined/playbook", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("undefined/playbook", container=container)
+    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_4", callback=playbook_create_events_1)
 
     return
 

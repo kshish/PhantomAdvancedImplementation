@@ -54,21 +54,21 @@
                     "targetPort": "8_in"
                 },
                 {
-                    "id": "port_5_to_port_10",
+                    "id": "port_5_to_port_13",
                     "sourceNode": "5",
                     "sourcePort": "5_out",
-                    "targetNode": "10",
-                    "targetPort": "10_in"
+                    "targetNode": "13",
+                    "targetPort": "13_in"
                 },
                 {
-                    "id": "port_10_to_port_11",
-                    "sourceNode": "10",
-                    "sourcePort": "10_out",
+                    "id": "port_13_to_port_11",
+                    "sourceNode": "13",
+                    "sourcePort": "13_out",
                     "targetNode": "11",
                     "targetPort": "11_in"
                 }
             ],
-            "hash": "0a7ab2467e5a884a3be9819750bff35fb0e65da7",
+            "hash": "47d4c11de2f90f875551f31b911667fd0ab72c86",
             "nodes": {
                 "0": {
                     "data": {
@@ -83,7 +83,7 @@
                     "id": "0",
                     "type": "start",
                     "x": 1000,
-                    "y": 419.99999999999983
+                    "y": 419.9999999999998
                 },
                 "1": {
                     "data": {
@@ -102,7 +102,36 @@
                     "x": 1000,
                     "y": 1480
                 },
-                "10": {
+                "11": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_create_events_1",
+                        "id": "11",
+                        "inputs": {
+                            "mylist": {
+                                "datapaths": [
+                                    "l5_cf_get_query_results_py3_4:custom_function_result.data.results_list"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "playbookName": "create events",
+                        "playbookRepo": 3,
+                        "playbookRepoName": "chris",
+                        "playbookType": "data",
+                        "synchronous": false,
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "11",
+                    "type": "playbook",
+                    "x": 1420,
+                    "y": 1060
+                },
+                "13": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -112,9 +141,9 @@
                             "name": "L5_CF_Get_Query_Results_py3",
                             "repoName": "chris"
                         },
-                        "functionId": 3,
-                        "functionName": "L5_CF_Get_Query_Results_py3_3",
-                        "id": "10",
+                        "functionId": 4,
+                        "functionName": "L5_CF_Get_Query_Results_py3_4",
+                        "id": "13",
                         "selectMore": false,
                         "type": "utility",
                         "utilities": {
@@ -177,34 +206,18 @@
                         "utilityType": "custom_function",
                         "values": {
                             "L5_CF_Get_Query_Results_py3": {
-                                "container": "container:id",
-                                "count": "run_query_1:action_result.data.*.count",
-                                "peer": "run_query_1:action_result.data.*.peer",
-                                "priority": "run_query_1:action_result.data.*.priority"
+                                "container": null,
+                                "count": null,
+                                "peer": null,
+                                "priority": null
                             }
                         }
                     },
                     "errors": {},
-                    "id": "10",
+                    "id": "13",
                     "type": "utility",
-                    "x": 1400,
-                    "y": 920
-                },
-                "11": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "functionId": 1,
-                        "functionName": "playbook_1",
-                        "id": "11",
-                        "type": "playbook"
-                    },
-                    "errors": {},
-                    "id": "11",
-                    "type": "playbook",
-                    "x": 1400,
-                    "y": 1064.5
+                    "x": 1420,
+                    "y": 864.5
                 },
                 "2": {
                     "data": {
@@ -304,7 +317,7 @@
                     "id": "5",
                     "type": "action",
                     "x": 980,
-                    "y": 764.5
+                    "y": 760
                 },
                 "6": {
                     "data": {
@@ -419,7 +432,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2021-10-29T20:29:17.669955+00:00",
+    "create_time": "2021-10-29T20:53:37.228631+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
