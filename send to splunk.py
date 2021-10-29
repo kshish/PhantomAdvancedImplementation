@@ -237,13 +237,20 @@ def playbook_create_events_1(action=None, success=None, container=None, results=
 def l5_cf_get_query_results_py3_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("l5_cf_get_query_results_py3_4() called")
 
+    id_value = container.get("id", None)
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.peer","run_query_1:action_result.data.*.priority","run_query_1:action_result.data.*.count","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+
+    run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
+    run_query_1_result_item_1 = [item[1] for item in run_query_1_result_data]
+    run_query_1_result_item_2 = [item[2] for item in run_query_1_result_data]
+
     parameters = []
 
     parameters.append({
-        "peer": None,
-        "priority": None,
-        "count": None,
-        "container": None,
+        "peer": run_query_1_result_item_0,
+        "priority": run_query_1_result_item_1,
+        "count": run_query_1_result_item_2,
+        "container": id_value,
     })
 
     ################################################################################

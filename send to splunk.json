@@ -68,7 +68,7 @@
                     "targetPort": "11_in"
                 }
             ],
-            "hash": "47d4c11de2f90f875551f31b911667fd0ab72c86",
+            "hash": "6557653d8780d192d50c08d40e3189f924af99ee",
             "nodes": {
                 "0": {
                     "data": {
@@ -206,10 +206,10 @@
                         "utilityType": "custom_function",
                         "values": {
                             "L5_CF_Get_Query_Results_py3": {
-                                "container": null,
-                                "count": null,
-                                "peer": null,
-                                "priority": null
+                                "container": "container:id",
+                                "count": "run_query_1:action_result.data.*.count",
+                                "peer": "run_query_1:action_result.data.*.peer",
+                                "priority": "run_query_1:action_result.data.*.priority"
                             }
                         }
                     },
@@ -432,7 +432,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2021-10-29T20:53:37.228631+00:00",
+    "create_time": "2021-10-29T20:55:18.884897+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
