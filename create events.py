@@ -19,11 +19,15 @@ def on_start(container):
 def l5_cf_create_containers_from_list_py3_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("l5_cf_create_containers_from_list_py3_1() called")
 
+    playbook_input_mylist = phantom.collect2(container=container, datapath=["playbook_input:mylist"])
+
+    playbook_input_mylist_values = [item[0] for item in playbook_input_mylist]
+
     parameters = []
 
     parameters.append({
-        "to_be_containerized": None,
-        "container_label": None,
+        "to_be_containerized": playbook_input_mylist_values,
+        "container_label": "malware",
     })
 
     ################################################################################

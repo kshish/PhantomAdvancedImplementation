@@ -14,7 +14,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "0211694452bf5331fe5a52366e99cb1a3d097a3c",
+            "hash": "58c6569d4db5e9188a63ac7c53055583dbd15e0d",
             "nodes": {
                 "0": {
                     "data": {
@@ -29,7 +29,7 @@
                     "id": "0",
                     "type": "start",
                     "x": 1000,
-                    "y": 419.9999999999995
+                    "y": 419.9999999999991
                 },
                 "1": {
                     "data": {
@@ -95,8 +95,8 @@
                         "utilityType": "custom_function",
                         "values": {
                             "L5_CF_Create_Containers_From_List_py3": {
-                                "container_label": null,
-                                "to_be_containerized": null
+                                "container_label": "malware",
+                                "to_be_containerized": "playbook_input:mylist"
                             }
                         }
                     },
@@ -122,7 +122,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2021-10-29T20:30:45.375917+00:00",
+    "create_time": "2021-10-29T20:53:07.776159+00:00",
     "draft_mode": false,
     "labels": [
         "*"
