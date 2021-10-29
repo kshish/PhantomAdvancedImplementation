@@ -265,7 +265,7 @@ def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, res
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3")
+    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3", callback=l5_cf_create_containers_from_list_py3_2)
 
     return
 
