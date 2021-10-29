@@ -207,35 +207,6 @@ def update_event_1(action=None, success=None, container=None, results=None, hand
     return
 
 
-def l5_cf_create_containers_from_list_py3_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("l5_cf_create_containers_from_list_py3_2() called")
-
-    l5_cf_get_query_results_py3_3__result = phantom.collect2(container=container, datapath=["l5_cf_get_query_results_py3_3:custom_function_result.data.results_list"])
-
-    l5_cf_get_query_results_py3_3_data_results_list = [item[0] for item in l5_cf_get_query_results_py3_3__result]
-
-    parameters = []
-
-    parameters.append({
-        "to_be_containerized": l5_cf_get_query_results_py3_3_data_results_list,
-        "container_label": "malware",
-    })
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.custom_function(custom_function="chris/L5_CF_Create_Containers_From_List_py3", parameters=parameters, name="l5_cf_create_containers_from_list_py3_2")
-
-    return
-
-
 def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("l5_cf_get_query_results_py3_3() called")
 
@@ -265,7 +236,26 @@ def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, res
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3", callback=l5_cf_create_containers_from_list_py3_2)
+    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3", callback=playbook_1)
+
+    return
+
+
+def playbook_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("playbook_1() called")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    # call playbook "undefined/playbook", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("undefined/playbook", container=container)
 
     return
 

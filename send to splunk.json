@@ -61,14 +61,14 @@
                     "targetPort": "10_in"
                 },
                 {
-                    "id": "port_10_to_port_9",
+                    "id": "port_10_to_port_11",
                     "sourceNode": "10",
                     "sourcePort": "10_out",
-                    "targetNode": "9",
-                    "targetPort": "9_in"
+                    "targetNode": "11",
+                    "targetPort": "11_in"
                 }
             ],
-            "hash": "c64f0671c803fda0997661abb9d2b7b0eb0a56b8",
+            "hash": "0a7ab2467e5a884a3be9819750bff35fb0e65da7",
             "nodes": {
                 "0": {
                     "data": {
@@ -189,6 +189,22 @@
                     "type": "utility",
                     "x": 1400,
                     "y": 920
+                },
+                "11": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_1",
+                        "id": "11",
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "11",
+                    "type": "playbook",
+                    "x": 1400,
+                    "y": 1064.5
                 },
                 "2": {
                     "data": {
@@ -392,64 +408,6 @@
                     "type": "action",
                     "x": 980,
                     "y": 1180
-                },
-                "9": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "customFunction": {
-                            "draftMode": false,
-                            "name": "L5_CF_Create_Containers_From_List_py3",
-                            "repoName": "chris"
-                        },
-                        "functionId": 2,
-                        "functionName": "L5_CF_Create_Containers_From_List_py3_2",
-                        "id": "9",
-                        "selectMore": false,
-                        "type": "utility",
-                        "utilities": {
-                            "L5_CF_Create_Containers_From_List_py3": {
-                                "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
-                                "fields": [
-                                    {
-                                        "dataTypes": [],
-                                        "description": "List of Lists for things to be containerized.",
-                                        "inputType": "list",
-                                        "label": "to_be_containerized",
-                                        "name": "to_be_containerized",
-                                        "placeholder": "",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    },
-                                    {
-                                        "dataTypes": [],
-                                        "description": "This will be the label applied to the container",
-                                        "inputType": "item",
-                                        "label": "container_label",
-                                        "name": "container_label",
-                                        "placeholder": "events",
-                                        "renderType": "datapath",
-                                        "required": false
-                                    }
-                                ],
-                                "label": "L5_CF_Create_Containers_From_List_py3",
-                                "name": "L5_CF_Create_Containers_From_List_py3"
-                            }
-                        },
-                        "utilityType": "custom_function",
-                        "values": {
-                            "L5_CF_Create_Containers_From_List_py3": {
-                                "container_label": "malware",
-                                "to_be_containerized": "l5_cf_get_query_results_py3_3:custom_function_result.data.results_list"
-                            }
-                        }
-                    },
-                    "errors": {},
-                    "id": "9",
-                    "type": "utility",
-                    "x": 1400,
-                    "y": 1120
                 }
             },
             "notes": ""
@@ -461,7 +419,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2021-10-29T20:10:32.985323+00:00",
+    "create_time": "2021-10-29T20:29:17.669955+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
