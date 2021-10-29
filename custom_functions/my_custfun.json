@@ -1,0 +1,37 @@
+{
+    "create_time": "2021-10-29T14:08:38.383035+00:00",
+    "custom_function_id": "ec23dc50c5ec99b2cd441de27936b9dde48e8e55",
+    "description": "demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "map a valid IP address into here",
+            "input_type": "list",
+            "name": "myIP",
+            "placeholder": "111.22.33.44"
+        },
+        {
+            "contains_type": [
+                "user name"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "userName",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "hash"
+            ],
+            "data_path": "ipAndUserInfo",
+            "description": "calculated hash"
+        }
+    ],
+    "platform_version": "4.10.3.51237",
+    "python_version": "3"
+}
