@@ -96,7 +96,18 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["esabwrev"], callback=prompt_1)
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["esabwrev"], callback=run_query_1_callback)
+
+    return
+
+
+def run_query_1_callback(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("run_query_1_callback() called")
+
+    
+    prompt_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    l5_cf_get_query_results_py3_3(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+
 
     return
 
@@ -192,6 +203,69 @@ def update_event_1(action=None, success=None, container=None, results=None, hand
     ################################################################################
 
     phantom.act("update event", parameters=parameters, name="update_event_1", assets=["esabwrev"])
+
+    return
+
+
+def l5_cf_create_containers_from_list_py3_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("l5_cf_create_containers_from_list_py3_2() called")
+
+    l5_cf_get_query_results_py3_3__result = phantom.collect2(container=container, datapath=["l5_cf_get_query_results_py3_3:custom_function_result.data.results_list"])
+
+    l5_cf_get_query_results_py3_3_data_results_list = [item[0] for item in l5_cf_get_query_results_py3_3__result]
+
+    parameters = []
+
+    parameters.append({
+        "to_be_containerized": l5_cf_get_query_results_py3_3_data_results_list,
+        "container_label": "malware",
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="chris/L5_CF_Create_Containers_From_List_py3", parameters=parameters, name="l5_cf_create_containers_from_list_py3_2")
+
+    return
+
+
+def l5_cf_get_query_results_py3_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("l5_cf_get_query_results_py3_3() called")
+
+    id_value = container.get("id", None)
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.peer","run_query_1:action_result.data.*.priority","run_query_1:action_result.data.*.count","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+
+    run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
+    run_query_1_result_item_1 = [item[1] for item in run_query_1_result_data]
+    run_query_1_result_item_2 = [item[2] for item in run_query_1_result_data]
+
+    parameters = []
+
+    parameters.append({
+        "peer": run_query_1_result_item_0,
+        "priority": run_query_1_result_item_1,
+        "count": run_query_1_result_item_2,
+        "container": id_value,
+    })
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.custom_function(custom_function="chris/L5_CF_Get_Query_Results_py3", parameters=parameters, name="l5_cf_get_query_results_py3_3")
 
     return
 

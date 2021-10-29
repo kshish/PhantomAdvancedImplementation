@@ -52,9 +52,16 @@
                     "sourcePort": "7_out",
                     "targetNode": "8",
                     "targetPort": "8_in"
+                },
+                {
+                    "id": "port_5_to_port_10",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "10",
+                    "targetPort": "10_in"
                 }
             ],
-            "hash": "4ceb34f4398260f793d43b3f40225f880ab5fa4e",
+            "hash": "afa88d60392d8e4135b21d1862f9b9bf91a4e160",
             "nodes": {
                 "0": {
                     "data": {
@@ -87,6 +94,94 @@
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "x": 1000,
                     "y": 1480
+                },
+                "10": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "L5_CF_Get_Query_Results_py3",
+                            "repoName": "chris"
+                        },
+                        "functionId": 3,
+                        "functionName": "L5_CF_Get_Query_Results_py3_3",
+                        "id": "10",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "L5_CF_Get_Query_Results_py3": {
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            "*"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "peer",
+                                        "name": "peer",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [
+                                            "*"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "priority",
+                                        "name": "priority",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [
+                                            "*"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "count",
+                                        "name": "count",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [
+                                            "phantom container id"
+                                        ],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "container",
+                                        "name": "container",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "L5_CF_Get_Query_Results_py3",
+                                "name": "L5_CF_Get_Query_Results_py3"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "L5_CF_Get_Query_Results_py3": {
+                                "container": "container:id",
+                                "count": "run_query_1:action_result.data.*.count",
+                                "peer": "run_query_1:action_result.data.*.peer",
+                                "priority": "run_query_1:action_result.data.*.priority"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "10",
+                    "type": "utility",
+                    "x": 1400,
+                    "y": 920
                 },
                 "2": {
                     "data": {
@@ -290,6 +385,64 @@
                     "type": "action",
                     "x": 980,
                     "y": 1180
+                },
+                "9": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "L5_CF_Create_Containers_From_List_py3",
+                            "repoName": "chris"
+                        },
+                        "functionId": 2,
+                        "functionName": "L5_CF_Create_Containers_From_List_py3_2",
+                        "id": "9",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "L5_CF_Create_Containers_From_List_py3": {
+                                "description": "From a list of lists, create a set of Phantom containers and add in the appropriate artifacts",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "List of Lists for things to be containerized.",
+                                        "inputType": "list",
+                                        "label": "to_be_containerized",
+                                        "name": "to_be_containerized",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "This will be the label applied to the container",
+                                        "inputType": "item",
+                                        "label": "container_label",
+                                        "name": "container_label",
+                                        "placeholder": "events",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "L5_CF_Create_Containers_From_List_py3",
+                                "name": "L5_CF_Create_Containers_From_List_py3"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "L5_CF_Create_Containers_From_List_py3": {
+                                "container_label": "malware",
+                                "to_be_containerized": "l5_cf_get_query_results_py3_3:custom_function_result.data.results_list"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "9",
+                    "type": "utility",
+                    "x": 1820,
+                    "y": 1000
                 }
             },
             "notes": ""
@@ -301,7 +454,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2021-10-29T19:07:15.519345+00:00",
+    "create_time": "2021-10-29T19:52:59.752614+00:00",
     "draft_mode": false,
     "labels": [
         "notable"
