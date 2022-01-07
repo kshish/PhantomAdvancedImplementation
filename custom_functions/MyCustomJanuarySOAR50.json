@@ -1,0 +1,40 @@
+{
+    "create_time": "2022-01-07T18:21:30.683257+00:00",
+    "custom_function_id": "362ccec3a0ffe7507d3f3211ecae58566f5009f4",
+    "description": "this is a demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "Please map an ip value into this input",
+            "input_type": "list",
+            "name": "anIp",
+            "placeholder": "111.222.33.44"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "list",
+            "name": "somevalue",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myoutIP",
+            "description": ""
+        },
+        {
+            "contains_type": [],
+            "data_path": "someValue",
+            "description": ""
+        }
+    ],
+    "platform_version": "5.0.1.66250",
+    "python_version": "3"
+}
