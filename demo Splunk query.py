@@ -48,11 +48,15 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
+    format_1 = phantom.get_format_data(name="format_1")
+
     parameters = []
 
-    parameters.append({
-        "command": "savedsearch",
-    })
+    if format_1 is not None:
+        parameters.append({
+            "command": "savedsearch",
+            "query": format_1,
+        })
 
     ################################################################################
     ## Custom Code Start

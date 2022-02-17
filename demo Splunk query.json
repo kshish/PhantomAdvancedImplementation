@@ -42,7 +42,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "2ae0dd7ba5d592486a1ac1efa28ae10e5a0ad61a",
+            "hash": "bac9bb871d77e2401c9b21ba5fcff508b44926b0",
             "nodes": {
                 "0": {
                     "data": {
@@ -113,7 +113,8 @@
                         "functionName": "run_query_1",
                         "id": "3",
                         "parameters": {
-                            "command": "savedsearch"
+                            "command": "savedsearch",
+                            "query": "format_1:formatted_data"
                         },
                         "requiredParameters": [
                             "query"
@@ -124,7 +125,7 @@
                     "id": "3",
                     "type": "action",
                     "x": 980,
-                    "y": 744.5
+                    "y": 740
                 },
                 "4": {
                     "data": {
@@ -206,7 +207,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2022-02-17T19:46:19.435801+00:00",
+    "create_time": "2022-02-17T19:47:49.826449+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
