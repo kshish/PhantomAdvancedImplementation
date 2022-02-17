@@ -48,7 +48,7 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
 
     # set user and message variables for phantom.prompt call
 
-    user = ""
+    user = "admin"
     message = """The result are\n\nuser: {0} destination {2} time {1}"""
 
     # parameter list for template variable replacement
