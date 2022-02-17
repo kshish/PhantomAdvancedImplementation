@@ -38,7 +38,27 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk100"])
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk100"], callback=prompt_1)
+
+    return
+
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("prompt_1() called")
+
+    # set user and message variables for phantom.prompt call
+
+    user = ""
+    message = """The result are\n\nuser: {0} destination {2} time {1}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.data.*.user",
+        "run_query_1:action_result.data.*.dest",
+        "run_query_1:action_result.data.*._time"
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters)
 
     return
 

@@ -12,9 +12,16 @@
                     "sourcePort": "0_out",
                     "targetNode": "2",
                     "targetPort": "2_in"
+                },
+                {
+                    "id": "port_2_to_port_3",
+                    "sourceNode": "2",
+                    "sourcePort": "2_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
                 }
             ],
-            "hash": "f2a402d2b785930a5fa870cfefe4af29cbe251be",
+            "hash": "4ac30bcd118216002c02f2a6ed287881f013d03a",
             "nodes": {
                 "0": {
                     "data": {
@@ -78,6 +85,31 @@
                     "type": "action",
                     "x": 980,
                     "y": 604.5
+                },
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "approver": "",
+                        "functionId": 1,
+                        "functionName": "prompt_1",
+                        "id": "3",
+                        "message": "The result are\n\nuser: {0} destination {2} time {1}",
+                        "parameters": [
+                            "run_query_1:action_result.data.*.user",
+                            "run_query_1:action_result.data.*.dest",
+                            "run_query_1:action_result.data.*._time"
+                        ],
+                        "responseTime": 30,
+                        "responses": [],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "prompt",
+                    "x": 1060,
+                    "y": 764.5
                 }
             },
             "notes": ""
@@ -89,7 +121,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2022-02-17T19:20:26.603828+00:00",
+    "create_time": "2022-02-17T19:25:32.774340+00:00",
     "draft_mode": false,
     "labels": [
         "*"
