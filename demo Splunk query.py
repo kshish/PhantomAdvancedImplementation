@@ -95,13 +95,13 @@ def format_analyst_msg(action=None, success=None, container=None, results=None, 
 
     phantom.format(container=container, template=template, parameters=parameters, name="format_analyst_msg")
 
-    create_list(container=container)
+    create_my_list(container=container)
 
     return
 
 
-def create_list(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
-    phantom.debug("create_list() called")
+def create_my_list(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("create_my_list() called")
 
     template = """%%\nServer: {0} with priority {1}, {2} times\n%%"""
 
@@ -122,7 +122,7 @@ def create_list(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.format(container=container, template=template, parameters=parameters, name="create_list")
+    phantom.format(container=container, template=template, parameters=parameters, name="create_my_list")
 
     prompt_1(container=container)
 
