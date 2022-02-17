@@ -42,7 +42,7 @@
                     "targetPort": "6_in"
                 }
             ],
-            "hash": "bac9bb871d77e2401c9b21ba5fcff508b44926b0",
+            "hash": "a72356a6cc72f92985d990c90441c5be1e63fb19",
             "nodes": {
                 "0": {
                     "data": {
@@ -87,7 +87,7 @@
                         "parameters": [
                             "artifact:*.cef.destinationHostName"
                         ],
-                        "template": "find_peers server=\"{0}\"\n",
+                        "template": "find_peer servers=\"{0}\"\n",
                         "type": "format"
                     },
                     "errors": {},
@@ -207,7 +207,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2022-02-17T19:47:49.826449+00:00",
+    "create_time": "2022-02-17T19:49:40.202330+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
