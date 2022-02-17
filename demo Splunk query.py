@@ -116,6 +116,8 @@ def create_my_list(action=None, success=None, container=None, results=None, hand
     ## Custom Code Start
     ################################################################################
 
+    phantom.debug("Chris wuz here")
+    phantom.debug(parameters)
     # Write your custom code here...
 
     ################################################################################
@@ -140,7 +142,7 @@ def prompt_1(action=None, success=None, container=None, results=None, handle=Non
     # parameter list for template variable replacement
     parameters = [
         "format_analyst_msg:formatted_data",
-        "create_list:formatted_data"
+        "create_my_list:formatted_data"
     ]
 
     # responses

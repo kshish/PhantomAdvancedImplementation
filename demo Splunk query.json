@@ -61,7 +61,7 @@
                     "targetPort": "8_in"
                 }
             ],
-            "hash": "3a087b418ff1d0a60e4195bfb7189c5be99a5c6b",
+            "hash": "e3cefa99faa7442550f44baef863c5d7b90450f9",
             "nodes": {
                 "0": {
                     "data": {
@@ -189,6 +189,7 @@
                     "errors": {},
                     "id": "5",
                     "type": "format",
+                    "userCode": "\n    phantom.debug(\"Chris wuz here\")\n    phantom.debug(parameters)\n    # Write your custom code here...\n\n",
                     "x": 990,
                     "y": 1024.5
                 },
@@ -204,7 +205,7 @@
                         "message": "{0}\n\n{1}",
                         "parameters": [
                             "format_analyst_msg:formatted_data",
-                            "create_list:formatted_data"
+                            "create_my_list:formatted_data"
                         ],
                         "responseTime": 30,
                         "responses": [
@@ -227,7 +228,7 @@
                     "id": "6",
                     "type": "prompt",
                     "x": 1060,
-                    "y": 1164.5
+                    "y": 1160
                 },
                 "7": {
                     "data": {
@@ -304,7 +305,7 @@
         "schema": "5.0.3",
         "version": "5.0.1.66250"
     },
-    "create_time": "2022-02-17T20:42:25.614200+00:00",
+    "create_time": "2022-02-17T20:45:45.227687+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
