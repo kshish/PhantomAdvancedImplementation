@@ -4,7 +4,7 @@ def someDemo(myIp=None, myHostname=None, myString=None, **kwargs):
     
     Args:
         myIp (CEF type: ip): Enter or map an IP address
-        myHostname (CEF type: hostname): map a hostname value
+        myHostname (CEF type: host name): map a hostname value
         myString: map any value
     
     Returns a JSON-serializable object that implements the configured data paths:

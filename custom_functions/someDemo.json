@@ -1,5 +1,5 @@
 {
-    "create_time": "2022-02-18T18:01:49.086555+00:00",
+    "create_time": "2022-02-18T18:04:50.235505+00:00",
     "custom_function_id": "bc6f305059e7c49be67ac58d210f3ce65f613ee2",
     "description": "Good description goes here",
     "draft_mode": false,
@@ -15,7 +15,7 @@
         },
         {
             "contains_type": [
-                "hostname"
+                "host name"
             ],
             "description": "map a hostname value",
             "input_type": "list",
