@@ -1,0 +1,49 @@
+{
+    "create_time": "2022-02-18T18:01:49.086555+00:00",
+    "custom_function_id": "bc6f305059e7c49be67ac58d210f3ce65f613ee2",
+    "description": "Good description goes here",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "Enter or map an IP address",
+            "input_type": "item",
+            "name": "myIp",
+            "placeholder": "111.222.33.44"
+        },
+        {
+            "contains_type": [
+                "hostname"
+            ],
+            "description": "map a hostname value",
+            "input_type": "list",
+            "name": "myHostname",
+            "placeholder": "aaa-001"
+        },
+        {
+            "contains_type": [],
+            "description": "map any value",
+            "input_type": "list",
+            "name": "myString",
+            "placeholder": "anything goes"
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myoutIP",
+            "description": "Some IP output from cf"
+        },
+        {
+            "contains_type": [],
+            "data_path": "someValue",
+            "description": "any data type"
+        }
+    ],
+    "platform_version": "5.0.1.66250",
+    "python_version": "3"
+}
