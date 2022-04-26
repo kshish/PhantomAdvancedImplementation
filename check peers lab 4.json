@@ -468,7 +468,8 @@
     "create_time": "2022-04-26T02:38:35.165210+00:00",
     "draft_mode": false,
     "labels": [
-        "splunk"
+        "splunk",
+        "test"
     ],
     "tags": []
 }
