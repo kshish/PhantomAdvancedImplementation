@@ -54,9 +54,16 @@
                     "sourcePort": "7_out",
                     "targetNode": "8",
                     "targetPort": "8_in"
+                },
+                {
+                    "id": "port_4_to_port_9",
+                    "sourceNode": "4",
+                    "sourcePort": "4_out",
+                    "targetNode": "9",
+                    "targetPort": "9_in"
                 }
             ],
-            "hash": "74c8cbd68022d1703d033750ef12e7da5b274c08",
+            "hash": "cc45fdd16b5cce2a6bae6066107cd42ec0fc04ab",
             "nodes": {
                 "0": {
                     "data": {
@@ -71,7 +78,7 @@
                     "id": "0",
                     "type": "start",
                     "x": 1000,
-                    "y": 419.9999999999996
+                    "y": 419.9999999999995
                 },
                 "1": {
                     "data": {
@@ -454,6 +461,88 @@
                     "type": "action",
                     "x": 980,
                     "y": 1300
+                },
+                "9": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "L5_CF_Get_Query_Results_py3_SOAR53",
+                            "repoName": "PAI"
+                        },
+                        "functionId": 3,
+                        "functionName": "L5_CF_Get_Query_Results_py3_SOAR53_3",
+                        "id": "9",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "L5_CF_Get_Query_Results_py3_SOAR53": {
+                                "description": "created with SOAR 5.3",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "peer",
+                                        "name": "peer",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "priority",
+                                        "name": "priority",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "count",
+                                        "name": "count",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    },
+                                    {
+                                        "dataTypes": [
+                                            "phantom container id"
+                                        ],
+                                        "description": "",
+                                        "inputType": "list",
+                                        "label": "container",
+                                        "name": "container",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "L5_CF_Get_Query_Results_py3_SOAR53",
+                                "name": "L5_CF_Get_Query_Results_py3_SOAR53"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "L5_CF_Get_Query_Results_py3_SOAR53": {
+                                "container": "container:id",
+                                "count": "run_query_1:action_result.data.*.count",
+                                "peer": "run_query_1:action_result.data.*.peer",
+                                "priority": "run_query_1:action_result.data.*.prioirity"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "9",
+                    "type": "utility",
+                    "x": 1440,
+                    "y": 904.5
                 }
             },
             "notes": ""
@@ -465,7 +554,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-26T02:38:35.165210+00:00",
+    "create_time": "2022-04-27T14:53:13.932532+00:00",
     "draft_mode": false,
     "labels": [
         "splunk",
