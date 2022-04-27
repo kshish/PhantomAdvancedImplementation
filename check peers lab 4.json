@@ -70,7 +70,7 @@
                     "targetPort": "10_in"
                 }
             ],
-            "hash": "3e4b2a781251f9d5796b04f64c4d4823123819fa",
+            "hash": "cdc3dd89b322cd5b42cd8c7c7a056ea32baebc5f",
             "nodes": {
                 "0": {
                     "data": {
@@ -110,8 +110,21 @@
                             "join": []
                         },
                         "functionId": 1,
-                        "functionName": "playbook_1",
+                        "functionName": "playbook_Create_Containers_from_list_SOAR53_1",
                         "id": "10",
+                        "inputs": {
+                            "list_name": {
+                                "datapaths": [
+                                    "l5_cf_get_query_results_py3_soar53_3:custom_function_result.data.results_list_name"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "playbookName": "Create Containers from list SOAR53",
+                        "playbookRepo": 5,
+                        "playbookRepoName": "PAI",
+                        "playbookType": "data",
+                        "synchronous": false,
                         "type": "playbook"
                     },
                     "errors": {},
@@ -577,7 +590,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-27T15:15:05.108710+00:00",
+    "create_time": "2022-04-27T15:17:06.097722+00:00",
     "draft_mode": false,
     "labels": [
         "splunk",
