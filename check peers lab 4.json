@@ -61,9 +61,16 @@
                     "sourcePort": "4_out",
                     "targetNode": "9",
                     "targetPort": "9_in"
+                },
+                {
+                    "id": "port_9_to_port_10",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "10",
+                    "targetPort": "10_in"
                 }
             ],
-            "hash": "80aa339dbfa2b9f70d79ae7d4394f8b86aeed899",
+            "hash": "3e4b2a781251f9d5796b04f64c4d4823123819fa",
             "nodes": {
                 "0": {
                     "data": {
@@ -96,6 +103,22 @@
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "x": 1320,
                     "y": 1200
+                },
+                "10": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_1",
+                        "id": "10",
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "10",
+                    "type": "playbook",
+                    "x": 1440,
+                    "y": 1064.5
                 },
                 "2": {
                     "data": {
@@ -554,7 +577,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-27T14:55:49.453994+00:00",
+    "create_time": "2022-04-27T15:15:05.108710+00:00",
     "draft_mode": false,
     "labels": [
         "splunk",

@@ -266,7 +266,26 @@ def l5_cf_get_query_results_py3_soar53_3(action=None, success=None, container=No
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="PAI/L5_CF_Get_Query_Results_py3_SOAR53", parameters=parameters, name="l5_cf_get_query_results_py3_soar53_3")
+    phantom.custom_function(custom_function="PAI/L5_CF_Get_Query_Results_py3_SOAR53", parameters=parameters, name="l5_cf_get_query_results_py3_soar53_3", callback=playbook_1)
+
+    return
+
+
+def playbook_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("playbook_1() called")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    # call playbook "local/playbook", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("local/playbook", container=container)
 
     return
 
