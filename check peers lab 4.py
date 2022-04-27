@@ -241,7 +241,7 @@ def l5_cf_get_query_results_py3_soar53_3(action=None, success=None, container=No
     phantom.debug("l5_cf_get_query_results_py3_soar53_3() called")
 
     id_value = container.get("id", None)
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.peer","run_query_1:action_result.data.*.prioirity","run_query_1:action_result.data.*.count","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.peer","run_query_1:action_result.data.*.priority","run_query_1:action_result.data.*.count","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
     run_query_1_result_item_1 = [item[1] for item in run_query_1_result_data]

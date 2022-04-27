@@ -63,7 +63,7 @@
                     "targetPort": "9_in"
                 }
             ],
-            "hash": "cc45fdd16b5cce2a6bae6066107cd42ec0fc04ab",
+            "hash": "80aa339dbfa2b9f70d79ae7d4394f8b86aeed899",
             "nodes": {
                 "0": {
                     "data": {
@@ -534,7 +534,7 @@
                                 "container": "container:id",
                                 "count": "run_query_1:action_result.data.*.count",
                                 "peer": "run_query_1:action_result.data.*.peer",
-                                "priority": "run_query_1:action_result.data.*.prioirity"
+                                "priority": "run_query_1:action_result.data.*.priority"
                             }
                         }
                     },
@@ -554,7 +554,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-27T14:53:13.932532+00:00",
+    "create_time": "2022-04-27T14:55:49.453994+00:00",
     "draft_mode": false,
     "labels": [
         "splunk",
