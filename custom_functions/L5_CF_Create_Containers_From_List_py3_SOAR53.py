@@ -1,4 +1,4 @@
-def L5_CF_Create_Containers_From_List_py3_SOAR53(to_be_containerized=None, container_label=None, **kwargs):
+def L5_CF_Create_Containers_From_List_py3_SOAR53(container_label=None, to_be_containerized=None, **kwargs):
     """
         From a list of lists, create a set of Phantom containers and add in the appropriate artifacts
         
@@ -10,8 +10,8 @@ def L5_CF_Create_Containers_From_List_py3_SOAR53(to_be_containerized=None, conta
             new_container_ids: List of container id's that have been created by this Custom Function.
     
     Args:
-        to_be_containerized
         container_label
+        to_be_containerized
     
     Returns a JSON-serializable object that implements the configured data paths:
         new_container_ids
