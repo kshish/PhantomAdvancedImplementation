@@ -63,14 +63,14 @@
                     "targetPort": "9_in"
                 },
                 {
-                    "id": "port_9_to_port_10",
+                    "id": "port_9_to_port_11",
                     "sourceNode": "9",
                     "sourcePort": "9_out",
-                    "targetNode": "10",
-                    "targetPort": "10_in"
+                    "targetNode": "11",
+                    "targetPort": "11_in"
                 }
             ],
-            "hash": "74c8cbd68022d1703d033750ef12e7da5b274c08",
+            "hash": "6fdeb9e64089362aa1f31fbfeea16ceb31a91ba3",
             "nodes": {
                 "0": {
                     "data": {
@@ -132,6 +132,35 @@
                     "type": "playbook",
                     "x": 1440,
                     "y": 1064.5
+                },
+                "11": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionId": 1,
+                        "functionName": "playbook_Triage_Peers_SOAR53_1",
+                        "id": "11",
+                        "inputs": {
+                            "mylist": {
+                                "datapaths": [
+                                    "l5_cf_get_query_results_py3_soar53_3:custom_function_result.data.results_list_name"
+                                ],
+                                "deduplicate": false
+                            }
+                        },
+                        "playbookName": "Triage Peers SOAR53",
+                        "playbookRepo": 5,
+                        "playbookRepoName": "PAI",
+                        "playbookType": "data",
+                        "synchronous": false,
+                        "type": "playbook"
+                    },
+                    "errors": {},
+                    "id": "11",
+                    "type": "playbook",
+                    "x": 1720,
+                    "y": 1104.5
                 },
                 "2": {
                     "data": {
@@ -590,7 +619,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-27T15:17:06.097722+00:00",
+    "create_time": "2022-04-28T23:30:09.844883+00:00",
     "draft_mode": false,
     "labels": [
         "splunk",

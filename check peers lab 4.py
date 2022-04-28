@@ -266,7 +266,7 @@ def l5_cf_get_query_results_py3_soar53_3(action=None, success=None, container=No
     ## Custom Code End
     ################################################################################
 
-    phantom.custom_function(custom_function="PAI/L5_CF_Get_Query_Results_py3_SOAR53", parameters=parameters, name="l5_cf_get_query_results_py3_soar53_3", callback=playbook_create_containers_from_list_soar53_1)
+    phantom.custom_function(custom_function="PAI/L5_CF_Get_Query_Results_py3_SOAR53", parameters=parameters, name="l5_cf_get_query_results_py3_soar53_3", callback=playbook_triage_peers_soar53_1)
 
     return
 
@@ -294,6 +294,33 @@ def playbook_create_containers_from_list_soar53_1(action=None, success=None, con
 
     # call playbook "PAI/Create Containers from list SOAR53", returns the playbook_run_id
     playbook_run_id = phantom.playbook("PAI/Create Containers from list SOAR53", container=container, inputs=inputs)
+
+    return
+
+
+def playbook_triage_peers_soar53_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("playbook_triage_peers_soar53_1() called")
+
+    l5_cf_get_query_results_py3_soar53_3__result = phantom.collect2(container=container, datapath=["l5_cf_get_query_results_py3_soar53_3:custom_function_result.data.results_list_name"])
+
+    l5_cf_get_query_results_py3_soar53_3_data_results_list_name = [item[0] for item in l5_cf_get_query_results_py3_soar53_3__result]
+
+    inputs = {
+        "mylist": l5_cf_get_query_results_py3_soar53_3_data_results_list_name,
+    }
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    # call playbook "PAI/Triage Peers SOAR53", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("PAI/Triage Peers SOAR53", container=container, inputs=inputs)
 
     return
 
