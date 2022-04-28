@@ -65,7 +65,7 @@ def l5_cf_create_containers_from_list_py3_soar53_3(action=None, success=None, co
     parameters = []
 
     parameters.append({
-        "container_label": "possibleMalware",
+        "container_label": "possiblemalware",
         "to_be_containerized": l5_cf_retrieve_list_soar53_2_data_listcontents,
     })
 
