@@ -40,7 +40,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "e300ea33874494d74f51f33568629631e480fb51",
+            "hash": "61b23aea12dfe951a8ff8fe59eea106ab12e35ab",
             "nodes": {
                 "0": {
                     "data": {
@@ -331,9 +331,9 @@
                         "utilityType": "custom_function",
                         "values": {
                             "debug": {
-                                "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority",
+                                "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents",
                                 "input_10": null,
-                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*",
+                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.*.priority",
                                 "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority",
                                 "input_4": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*",
                                 "input_5": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[0]",
@@ -403,7 +403,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T22:49:35.740469+00:00",
+    "create_time": "2022-04-28T22:58:12.182541+00:00",
     "draft_mode": false,
     "labels": [
         "*"
