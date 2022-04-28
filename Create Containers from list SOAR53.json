@@ -28,7 +28,7 @@
                     "targetPort": "5_in"
                 }
             ],
-            "hash": "5e669febff1175d30510ad3fddb495038d214f07",
+            "hash": "38d60286d2f9e49fc1e6645dfa66d0113f3c58e6",
             "nodes": {
                 "0": {
                     "data": {
@@ -318,8 +318,8 @@
                             "debug": {
                                 "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents",
                                 "input_10": null,
-                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[0,1]",
-                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[2]",
+                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[1]",
+                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[2]]",
                                 "input_4": null,
                                 "input_5": null,
                                 "input_6": null,
@@ -351,7 +351,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T19:13:03.391214+00:00",
+    "create_time": "2022-04-28T19:23:08.523008+00:00",
     "draft_mode": false,
     "labels": [
         "*"
