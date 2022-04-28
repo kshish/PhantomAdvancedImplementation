@@ -40,7 +40,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "30e8a4daddaad5dafad908754b6f0c71262973d7",
+            "hash": "b42dcbaf75a246d146e34ce7d230b8772cf8dc86",
             "nodes": {
                 "0": {
                     "data": {
@@ -75,6 +75,7 @@
                     "y": 1160
                 },
                 "3": {
+                    "customCode": null,
                     "data": {
                         "advanced": {
                             "join": []
@@ -118,6 +119,7 @@
                     "errors": {},
                     "id": "3",
                     "type": "utility",
+                    "userCode": null,
                     "x": 980,
                     "y": 544.5
                 },
@@ -182,6 +184,7 @@
                     "y": 1020
                 },
                 "5": {
+                    "customCode": "def debug_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):\n    phantom.debug(\"debug_4() called\")\n\n    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=[\"l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents\"])\n    phantom.debug(l5_cf_retrieve_list_soar53_2__result)\n    l5_cf_retrieve_list_soar53_2_data_listcontents = phantom.collect2(container=container, datapath=[\"l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*\",\"l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority\"])\n\n    l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]\n    l5_cf_retrieve_list_soar53_2_data_listcontents__ = [item[0] for item in l5_cf_retrieve_list_soar53_2_data_listcontents]\n    l5_cf_retrieve_list_soar53_2_data_listcontents___priority = [item[1] for item in l5_cf_retrieve_list_soar53_2_data_listcontents]\n\n    parameters = []\n\n    parameters.append({\n        \"input_1\": l5_cf_retrieve_list_soar53_2_data_listcontents,\n        \"input_2\": l5_cf_retrieve_list_soar53_2_data_listcontents__,\n        \"input_3\": l5_cf_retrieve_list_soar53_2_data_listcontents___priority,\n        \"input_4\": l5_cf_retrieve_list_soar53_2_data_listcontents__,\n        \"input_5\": None,\n        \"input_6\": None,\n        \"input_7\": None,\n        \"input_8\": None,\n        \"input_9\": None,\n        \"input_10\": None,\n    })\n\n    ################################################################################\n    ## Custom Code Start\n    ################################################################################\n\n    # Write your custom code here...\n\n    ################################################################################\n    ## Custom Code End\n    ################################################################################\n\n    phantom.custom_function(custom_function=\"community/debug\", parameters=parameters, name=\"debug_4\")\n\n    return",
                     "data": {
                         "advanced": {
                             "join": []
@@ -399,7 +402,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T22:14:27.044623+00:00",
+    "create_time": "2022-04-28T22:20:01.208188+00:00",
     "draft_mode": false,
     "labels": [
         "*"

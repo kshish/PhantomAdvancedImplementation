@@ -88,6 +88,7 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
     phantom.debug("debug_4() called")
 
     l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
+    phantom.debug(l5_cf_retrieve_list_soar53_2__result)
     l5_cf_retrieve_list_soar53_2_data_listcontents = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*","l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority"])
 
     l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
@@ -122,7 +123,6 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
     phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_4")
 
     return
-
 
 def filter_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("filter_2() called")
