@@ -100,7 +100,7 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
         "input_1": l5_cf_retrieve_list_soar53_2_data_listcontents,
         "input_2": l5_cf_retrieve_list_soar53_2_data_listcontents__,
         "input_3": l5_cf_retrieve_list_soar53_2_data_listcontents_priority,
-        "input_4": None,
+        "input_4": l5_cf_retrieve_list_soar53_2_data_listcontents__,
         "input_5": None,
         "input_6": None,
         "input_7": None,
