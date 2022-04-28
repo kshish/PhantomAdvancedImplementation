@@ -27,7 +27,7 @@ def L5_CF_Create_Containers_From_List_py3_SOAR53(container_label=None, to_be_con
     new_container_ids = []
     temp_peer_track = []
     
-    for item in to_be_containerized[0]:
+    for item in to_be_containerized:
         phantom.debug(item)
         (peer, priority, count) = item
         if peer not in temp_peer_track:
