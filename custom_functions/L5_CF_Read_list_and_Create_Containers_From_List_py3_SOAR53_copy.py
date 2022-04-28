@@ -26,7 +26,7 @@ def L5_CF_Read_list_and_Create_Containers_From_List_py3_SOAR53_copy(container_la
     # Write your custom code here...
     new_container_ids = []
     temp_peer_track = []
-    read_list__peer_list = phantom.get_list(listName)[2]
+    read_list__peer_list = phantom.get_list(listName)
 
     for item in read_list__peer_list[0]:
         phantom.debug(item)
