@@ -40,7 +40,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "afcdb44651b0237c340725d4dd99ca767b005f22",
+            "hash": "30e8a4daddaad5dafad908754b6f0c71262973d7",
             "nodes": {
                 "0": {
                     "data": {
@@ -331,7 +331,7 @@
                                 "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents",
                                 "input_10": null,
                                 "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*",
-                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority",
+                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority",
                                 "input_4": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*",
                                 "input_5": null,
                                 "input_6": null,
@@ -399,7 +399,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T22:09:30.706656+00:00",
+    "create_time": "2022-04-28T22:14:27.044623+00:00",
     "draft_mode": false,
     "labels": [
         "*"
