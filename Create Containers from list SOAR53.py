@@ -87,19 +87,18 @@ def l5_cf_create_containers_from_list_py3_soar53_3(action=None, success=None, co
 def debug_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("debug_4() called")
 
-    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority","l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
-    l5_cf_retrieve_list_soar53_2_data_listcontents_priority = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority.*"])
+    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
+    l5_cf_retrieve_list_soar53_2_data_listcontents = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority"])
 
-    l5_cf_retrieve_list_soar53_2_data_listcontents_priority = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
-    l5_cf_retrieve_list_soar53_2_data_listcontents = [item[1] for item in l5_cf_retrieve_list_soar53_2__result]
-    l5_cf_retrieve_list_soar53_2_data_listcontents_priority__ = [item[0] for item in l5_cf_retrieve_list_soar53_2_data_listcontents_priority]
+    l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
+    l5_cf_retrieve_list_soar53_2_data_listcontents___priority = [item[0] for item in l5_cf_retrieve_list_soar53_2_data_listcontents]
 
     parameters = []
 
     parameters.append({
-        "input_1": l5_cf_retrieve_list_soar53_2_data_listcontents_priority,
-        "input_2": l5_cf_retrieve_list_soar53_2_data_listcontents,
-        "input_3": l5_cf_retrieve_list_soar53_2_data_listcontents_priority__,
+        "input_1": l5_cf_retrieve_list_soar53_2_data_listcontents,
+        "input_2": l5_cf_retrieve_list_soar53_2_data_listcontents___priority,
+        "input_3": None,
         "input_4": None,
         "input_5": None,
         "input_6": None,
