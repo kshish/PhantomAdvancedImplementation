@@ -16,7 +16,7 @@ def L5_CF_Retrieve_List_SOAR53(listName=None, **kwargs):
     
     # Write your custom code here...
     
-    read_list__peer_list = phantom.get_list(listName)
+    read_list__peer_list = phantom.get_list(listName)[2]
     outputs = {"listContents": read_list__peer_list}
     
     # Return a JSON-serializable object
