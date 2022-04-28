@@ -1,62 +1,42 @@
 """
+
 """
+
 
 import phantom.rules as phantom
 import json
 from datetime import datetime, timedelta
+
+
 def on_start(container):
     phantom.debug('on_start() called')
-    
-    # call 'read_list' block
-    read_list(container=container)
+
+    # call 'parse_list' block
+    parse_list(container=container)
 
     return
 
-def read_list(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('read_list() called')
-    input_parameter_0 = ""
+def parse_list(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("parse_list() called")
 
-    read_list__peer_list = None
+    playbook_input_list_name = phantom.collect2(container=container, datapath=["playbook_input:list_name"])
+
+    playbook_input_list_name_values = [item[0] for item in playbook_input_list_name]
 
     ################################################################################
     ## Custom Code Start
     ################################################################################
 
     # Write your custom code here...
-    
-    # Fetch list name from container data
-    peer_list_name = phantom.get_container(container['id'])['data']["peer_list"]
-    
-    phantom.debug("peer list value ind data list: <<%s>>" % phantom.get_container(container['id'])['data']["peer_list"])
-    
-    phantom.debug("peer_list_name = <<%s>>" % peer_list_name)
-    
-    sta, msg, read_list__peer_list = phantom.get_list(list_name=peer_list_name)
-
-    ################################################################################
-    ## Custom Code End
-    ################################################################################
-
-    phantom.save_run_data(key='read_list:peer_list', value=json.dumps(read_list__peer_list))
-    create_containers(container=container)
-
-    return
-
-def create_containers(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None):
-    phantom.debug('create_containers() called')
-    read_list__peer_list = json.loads(phantom.get_run_data(key='read_list:peer_list'))
-
-    ################################################################################
-    ## Custom Code Start
-    ################################################################################
-
-    # Write your custom code here...
+    phantom.debug("parse_list input = {}".format(playbook_input_list_name))
+    sta, msg, read_list__peer_list = phantom.get_list(list_name=playbook_input_list_name_values[0] )
     for server in read_list__peer_list:
-        if server[2] in ["critical"]:
+        if server[2] in ["critical","high"]:
             phantom.debug("%s is priority %s" % (server[0],server[2]))
             status, message, cid = phantom.create_container(name="Possible server malware", label="events")
             #phantom.set_severity(cid, "high")
             phantom.add_artifact(container=cid, raw_data={}, cef_data={"sourceAddress":server[0]}, label="infection", name="Possibly infected host", severity="high", artifact_type="host")
+    
 
     ################################################################################
     ## Custom Code End
@@ -64,10 +44,16 @@ def create_containers(action=None, success=None, container=None, results=None, h
 
     return
 
+
 def on_finish(container, summary):
-    phantom.debug('on_finish() called')
+    phantom.debug("on_finish() called")
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
     # This function is called after all actions are completed.
-    # summary of all the action and/or all detals of actions
+    # summary of all the action and/or all details of actions
     # can be collected here.
 
     # summary_json = phantom.get_summary()
@@ -76,5 +62,9 @@ def on_finish(container, summary):
             # if 'action_run_id' in action_result:
                 # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)
                 # phantom.debug(action_results)
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
 
     return
