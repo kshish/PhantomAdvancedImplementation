@@ -7,14 +7,21 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_2",
+                    "id": "port_0_to_port_3",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "2",
-                    "targetPort": "2_in"
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_4",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "d044ce6e6719990c5395ec2155cfb53e2bf27ace",
+            "hash": "1b5f7d710c3a425abdbc51709a6bbcf5c58e7685",
             "nodes": {
                 "0": {
                     "data": {
@@ -48,7 +55,54 @@
                     "x": 1000,
                     "y": 1000
                 },
-                "2": {
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "L5_CF_Retrieve_List_SOAR53",
+                            "repoName": "PAI"
+                        },
+                        "functionId": 2,
+                        "functionName": "L5_CF_Retrieve_List_SOAR53_2",
+                        "id": "3",
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "L5_CF_Retrieve_List_SOAR53": {
+                                "description": "This CF retrieves the contents of a list",
+                                "fields": [
+                                    {
+                                        "dataTypes": [],
+                                        "description": "",
+                                        "inputType": "item",
+                                        "label": "listName",
+                                        "name": "listName",
+                                        "placeholder": "",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "L5_CF_Retrieve_List_SOAR53",
+                                "name": "L5_CF_Retrieve_List_SOAR53"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "L5_CF_Retrieve_List_SOAR53": {
+                                "listName": "playbook_input:list_name"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "utility",
+                    "x": 980,
+                    "y": 544.5
+                },
+                "4": {
                     "data": {
                         "advanced": {
                             "join": []
@@ -58,9 +112,9 @@
                             "name": "L5_CF_Create_Containers_From_List_py3_SOAR53",
                             "repoName": "PAI"
                         },
-                        "functionId": 1,
-                        "functionName": "L5_CF_Create_Containers_From_List_py3_SOAR53_1",
-                        "id": "2",
+                        "functionId": 3,
+                        "functionName": "L5_CF_Create_Containers_From_List_py3_SOAR53_3",
+                        "id": "4",
                         "selectMore": false,
                         "type": "utility",
                         "utilities": {
@@ -70,19 +124,21 @@
                                     {
                                         "dataTypes": [],
                                         "description": "",
-                                        "inputType": "list",
-                                        "label": "to_be_containerized",
-                                        "name": "to_be_containerized",
+                                        "inputType": "item",
+                                        "label": "container_label",
+                                        "name": "container_label",
                                         "placeholder": "",
                                         "renderType": "datapath",
                                         "required": false
                                     },
                                     {
-                                        "dataTypes": [],
+                                        "dataTypes": [
+                                            ""
+                                        ],
                                         "description": "",
-                                        "inputType": "item",
-                                        "label": "container_label",
-                                        "name": "container_label",
+                                        "inputType": "list",
+                                        "label": "to_be_containerized",
+                                        "name": "to_be_containerized",
                                         "placeholder": "",
                                         "renderType": "datapath",
                                         "required": false
@@ -95,16 +151,16 @@
                         "utilityType": "custom_function",
                         "values": {
                             "L5_CF_Create_Containers_From_List_py3_SOAR53": {
-                                "container_label": "event",
-                                "to_be_containerized": "playbook_input:list_name"
+                                "container_label": "possibleMalware",
+                                "to_be_containerized": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"
                             }
                         }
                     },
                     "errors": {},
-                    "id": "2",
+                    "id": "4",
                     "type": "utility",
                     "x": 980,
-                    "y": 544.5
+                    "y": 744.5
                 }
             },
             "notes": ""
@@ -122,7 +178,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T02:18:18.906074+00:00",
+    "create_time": "2022-04-28T17:31:08.185247+00:00",
     "draft_mode": false,
     "labels": [
         "*"
