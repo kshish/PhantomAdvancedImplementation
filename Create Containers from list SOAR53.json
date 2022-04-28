@@ -40,7 +40,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "5810b74b2f36eb37397eb043703a2b2c53cea118",
+            "hash": "e5276678f2371b28eee61c3763b380d8bff91800",
             "nodes": {
                 "0": {
                     "data": {
@@ -72,7 +72,7 @@
                     "type": "end",
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
                     "x": 1000,
-                    "y": 1000
+                    "y": 1160
                 },
                 "3": {
                     "data": {
@@ -179,7 +179,7 @@
                     "id": "4",
                     "type": "utility",
                     "x": 980,
-                    "y": 900
+                    "y": 1020
                 },
                 "5": {
                     "data": {
@@ -328,10 +328,10 @@
                         "utilityType": "custom_function",
                         "values": {
                             "debug": {
-                                "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents",
+                                "input_1": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority",
                                 "input_10": null,
-                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[1]",
-                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[2]]",
+                                "input_2": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents",
+                                "input_3": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority.*",
                                 "input_4": null,
                                 "input_5": null,
                                 "input_6": null,
@@ -362,6 +362,7 @@
                                         "value": "high"
                                     },
                                     {
+                                        "conditionIndex": 0,
                                         "op": "==",
                                         "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority",
                                         "value": "critical"
@@ -379,8 +380,8 @@
                     "errors": {},
                     "id": "7",
                     "type": "filter",
-                    "x": 1050,
-                    "y": 724.5
+                    "x": 1040,
+                    "y": 740
                 }
             },
             "notes": ""
@@ -398,7 +399,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T21:16:48.161437+00:00",
+    "create_time": "2022-04-28T21:28:37.052605+00:00",
     "draft_mode": false,
     "labels": [
         "*"
