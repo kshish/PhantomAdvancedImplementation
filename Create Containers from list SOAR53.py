@@ -48,8 +48,8 @@ def l5_cf_retrieve_list_soar53_2_callback(action=None, success=None, container=N
     phantom.debug("l5_cf_retrieve_list_soar53_2_callback() called")
 
     
-    l5_cf_create_containers_from_list_py3_soar53_3(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
     debug_4(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
+    filter_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=filtered_artifacts, filtered_results=filtered_results)
 
 
     return
@@ -58,15 +58,15 @@ def l5_cf_retrieve_list_soar53_2_callback(action=None, success=None, container=N
 def l5_cf_create_containers_from_list_py3_soar53_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("l5_cf_create_containers_from_list_py3_soar53_3() called")
 
-    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
+    filtered_cf_result_0 = phantom.collect2(container=container, datapath=["filtered-data:filter_2:condition_1:l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
 
-    l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
+    filtered_cf_result_0_data_listcontents = [item[0] for item in filtered_cf_result_0]
 
     parameters = []
 
     parameters.append({
         "container_label": "possiblemalware",
-        "to_be_containerized": l5_cf_retrieve_list_soar53_2_data_listcontents,
+        "to_be_containerized": filtered_cf_result_0_data_listcontents,
     })
 
     ################################################################################
@@ -119,6 +119,26 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
     ################################################################################
 
     phantom.custom_function(custom_function="community/debug", parameters=parameters, name="debug_4")
+
+    return
+
+
+def filter_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("filter_2() called")
+
+    # collect filtered artifact ids and results for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        logical_operator="or",
+        conditions=[
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority", "==", "high"],
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority", "==", "critical"]
+        ],
+        name="filter_2:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        l5_cf_create_containers_from_list_py3_soar53_3(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
 
     return
 

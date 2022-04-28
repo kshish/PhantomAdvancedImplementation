@@ -14,21 +14,33 @@
                     "targetPort": "3_in"
                 },
                 {
-                    "id": "port_3_to_port_4",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
-                    "targetNode": "4",
-                    "targetPort": "4_in"
-                },
-                {
                     "id": "port_3_to_port_5",
                     "sourceNode": "3",
                     "sourcePort": "3_out",
                     "targetNode": "5",
                     "targetPort": "5_in"
+                },
+                {
+                    "id": "port_3_to_port_7",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_7_to_port_4",
+                    "sourceNode": "7",
+                    "sourcePort": "7_out",
+                    "targetNode": "4",
+                    "targetPort": "4_in"
                 }
             ],
-            "hash": "38d60286d2f9e49fc1e6645dfa66d0113f3c58e6",
+            "hash": "5810b74b2f36eb37397eb043703a2b2c53cea118",
             "nodes": {
                 "0": {
                     "data": {
@@ -159,7 +171,7 @@
                         "values": {
                             "L5_CF_Create_Containers_From_List_py3_SOAR53": {
                                 "container_label": "possiblemalware",
-                                "to_be_containerized": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"
+                                "to_be_containerized": "filtered-data:filter_2:condition_1:l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"
                             }
                         }
                     },
@@ -167,7 +179,7 @@
                     "id": "4",
                     "type": "utility",
                     "x": 980,
-                    "y": 744.5
+                    "y": 900
                 },
                 "5": {
                     "data": {
@@ -332,8 +344,43 @@
                     "errors": {},
                     "id": "5",
                     "type": "utility",
-                    "x": 1220,
-                    "y": 700
+                    "x": 1460,
+                    "y": 720
+                },
+                "7": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority",
+                                        "value": "high"
+                                    },
+                                    {
+                                        "op": "==",
+                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority",
+                                        "value": "critical"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "logic": "or"
+                            }
+                        ],
+                        "functionId": 2,
+                        "functionName": "filter_2",
+                        "id": "7",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "7",
+                    "type": "filter",
+                    "x": 1050,
+                    "y": 724.5
                 }
             },
             "notes": ""
@@ -351,7 +398,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T19:23:08.523008+00:00",
+    "create_time": "2022-04-28T21:16:48.161437+00:00",
     "draft_mode": false,
     "labels": [
         "*"
