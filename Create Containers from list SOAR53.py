@@ -87,16 +87,18 @@ def l5_cf_create_containers_from_list_py3_soar53_3(action=None, success=None, co
 def debug_4(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("debug_4() called")
 
-    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
+    l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents","l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[0,1]","l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[2]"])
 
     l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
+    l5_cf_retrieve_list_soar53_2_data_listcontents_0_1_ = [item[1] for item in l5_cf_retrieve_list_soar53_2__result]
+    l5_cf_retrieve_list_soar53_2_data_listcontents_2_ = [item[2] for item in l5_cf_retrieve_list_soar53_2__result]
 
     parameters = []
 
     parameters.append({
         "input_1": l5_cf_retrieve_list_soar53_2_data_listcontents,
-        "input_2": None,
-        "input_3": None,
+        "input_2": l5_cf_retrieve_list_soar53_2_data_listcontents_0_1_,
+        "input_3": l5_cf_retrieve_list_soar53_2_data_listcontents_2_,
         "input_4": None,
         "input_5": None,
         "input_6": None,
