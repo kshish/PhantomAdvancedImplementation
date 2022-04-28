@@ -135,8 +135,8 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         logical_operator="or",
         conditions=[
-            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[1]", "==", "high"],
-            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority[1]", "==", "critical"]
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.[1]", "==", "high"],
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority.*.[1]", "==", "critical"]
         ],
         name="filter_2:condition_1")
 

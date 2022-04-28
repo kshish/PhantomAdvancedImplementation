@@ -40,7 +40,7 @@
                     "targetPort": "4_in"
                 }
             ],
-            "hash": "61b23aea12dfe951a8ff8fe59eea106ab12e35ab",
+            "hash": "4ad11ef769b21d77f5714387d7605d37ac3b0758",
             "nodes": {
                 "0": {
                     "data": {
@@ -362,13 +362,13 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[1]",
+                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.[1]",
                                         "value": "high"
                                     },
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority[1]",
+                                        "param": "l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority.*.[1]",
                                         "value": "critical"
                                     }
                                 ],
@@ -403,7 +403,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-28T22:58:12.182541+00:00",
+    "create_time": "2022-04-28T23:05:05.122301+00:00",
     "draft_mode": false,
     "labels": [
         "*"
