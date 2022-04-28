@@ -27,7 +27,7 @@ def l5_cf_create_containers_from_list_py3_soar53_1(action=None, success=None, co
 
     parameters.append({
         "to_be_containerized": playbook_input_list_name_values,
-        "container_label": "critical",
+        "container_label": "event",
     })
 
     ################################################################################

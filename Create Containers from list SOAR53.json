@@ -14,7 +14,7 @@
                     "targetPort": "2_in"
                 }
             ],
-            "hash": "69980873758c0fc130df540a2435bfcc1f07e898",
+            "hash": "d044ce6e6719990c5395ec2155cfb53e2bf27ace",
             "nodes": {
                 "0": {
                     "data": {
@@ -95,7 +95,7 @@
                         "utilityType": "custom_function",
                         "values": {
                             "L5_CF_Create_Containers_From_List_py3_SOAR53": {
-                                "container_label": "critical",
+                                "container_label": "event",
                                 "to_be_containerized": "playbook_input:list_name"
                             }
                         }
@@ -122,7 +122,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-04-27T15:14:26.110341+00:00",
+    "create_time": "2022-04-28T02:18:18.906074+00:00",
     "draft_mode": false,
     "labels": [
         "*"
