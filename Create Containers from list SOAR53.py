@@ -88,7 +88,6 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
     phantom.debug("debug_4() called")
 
     l5_cf_retrieve_list_soar53_2__result = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents"])
-    phantom.debug(l5_cf_retrieve_list_soar53_2__result)
     l5_cf_retrieve_list_soar53_2_data_listcontents = phantom.collect2(container=container, datapath=["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*","l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.*.priority"])
 
     l5_cf_retrieve_list_soar53_2_data_listcontents = [item[0] for item in l5_cf_retrieve_list_soar53_2__result]
@@ -124,6 +123,7 @@ def debug_4(action=None, success=None, container=None, results=None, handle=None
 
     return
 
+
 def filter_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
     phantom.debug("filter_2() called")
 
@@ -132,8 +132,8 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
         container=container,
         logical_operator="or",
         conditions=[
-            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority", "==", "high"],
-            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority", "==", "critical"]
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents[1]", "==", "high"],
+            ["l5_cf_retrieve_list_soar53_2:custom_function_result.data.listContents.priority[1]", "==", "critical"]
         ],
         name="filter_2:condition_1")
 
