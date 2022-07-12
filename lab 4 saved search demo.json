@@ -52,9 +52,28 @@
                     "sourcePort": "7_out",
                     "targetNode": "8",
                     "targetPort": "8_in"
+                },
+                {
+                    "id": "port_8_to_port_9",
+                    "sourceNode": "8",
+                    "sourcePort": "8_out",
+                    "targetNode": "9",
+                    "targetPort": "9_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_9_to_port_10",
+                    "sourceNode": "9",
+                    "sourcePort": "9_out",
+                    "targetNode": "10",
+                    "targetPort": "10_in"
                 }
             ],
-            "hash": "88dd2c85f4c209ab0f659f6ea6522036d6192797",
+            "hash": "2c9b81692504eb4bf01d11496bba5deeb5faf700",
             "nodes": {
                 "0": {
                     "data": {
@@ -85,8 +104,45 @@
                     "id": "1",
                     "type": "end",
                     "userCode": "\n    # This function is called after all actions are completed.\n    # summary of all the action and/or all details of actions\n    # can be collected here.\n\n    # summary_json = phantom.get_summary()\n    # if 'result' in summary_json:\n        # for action_result in summary_json['result']:\n            # if 'action_run_id' in action_result:\n                # action_results = phantom.get_action_results(action_run_id=action_result['action_run_id'], result_data=False, flatten=False)\n                # phantom.debug(action_results)\n\n",
-                    "x": 980,
-                    "y": 1680
+                    "x": 960,
+                    "y": 1840
+                },
+                "10": {
+                    "data": {
+                        "action": "update event",
+                        "actionType": "generic",
+                        "advanced": {
+                            "join": []
+                        },
+                        "connector": "Splunk",
+                        "connectorConfigs": [
+                            "splunk100"
+                        ],
+                        "connectorId": "91883aa8-9c81-470b-97a1-5d8f7995f560",
+                        "connectorVersion": "v1",
+                        "functionId": 1,
+                        "functionName": "update_event_1",
+                        "id": "10",
+                        "parameters": {
+                            "comment": "format_3:formatted_data",
+                            "event_ids": "artifact:*.cef.notableId",
+                            "owner": "admin",
+                            "status": "in progress",
+                            "urgency": "critical"
+                        },
+                        "requiredParameters": [
+                            {
+                                "data_type": "string",
+                                "field": "event_ids"
+                            }
+                        ],
+                        "type": "action"
+                    },
+                    "errors": {},
+                    "id": "10",
+                    "type": "action",
+                    "x": 1000,
+                    "y": 1684.5
                 },
                 "2": {
                     "data": {
@@ -346,8 +402,8 @@
                     "errors": {},
                     "id": "6",
                     "type": "filter",
-                    "x": 1020,
-                    "y": 984.5
+                    "x": 1040,
+                    "y": 960
                 },
                 "7": {
                     "data": {
@@ -386,7 +442,16 @@
                             "format_3:formatted_data"
                         ],
                         "responseTime": 30,
-                        "responses": [],
+                        "responses": [
+                            {
+                                "responseOptions": [
+                                    "Yes",
+                                    "No"
+                                ],
+                                "responsePrompt": "Would you like to take ownership of the notable event?",
+                                "responseType": "yes/no"
+                            }
+                        ],
                         "type": "prompt"
                     },
                     "errors": {},
@@ -394,6 +459,38 @@
                     "type": "prompt",
                     "x": 1070,
                     "y": 1324.5
+                },
+                "9": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "prompt_1:action_result.summary.responses.0",
+                                        "value": "Yes"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "display": "If",
+                                "logic": "and",
+                                "type": "if"
+                            }
+                        ],
+                        "functionId": 1,
+                        "functionName": "decision_1",
+                        "id": "9",
+                        "type": "decision"
+                    },
+                    "errors": {},
+                    "id": "9",
+                    "type": "decision",
+                    "x": 1070,
+                    "y": 1504.5
                 }
             },
             "notes": ""
@@ -405,7 +502,7 @@
         "schema": "5.0.6",
         "version": "5.3.0.84310"
     },
-    "create_time": "2022-07-12T20:06:28.891607+00:00",
+    "create_time": "2022-07-12T20:14:31.153655+00:00",
     "draft_mode": false,
     "labels": [
         "malware"
