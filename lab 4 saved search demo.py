@@ -68,7 +68,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk100"])
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk100"], callback=filter_1)
 
     return
 
@@ -107,6 +107,74 @@ def list_merge_1(action=None, success=None, container=None, results=None, handle
     ################################################################################
 
     phantom.custom_function(custom_function="community/list_merge", parameters=parameters, name="list_merge_1", callback=format_1)
+
+    return
+
+
+def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("filter_1() called")
+
+    # collect filtered artifact ids and results for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        logical_operator="or",
+        conditions=[
+            ["run_query_1:action_result.data.*.priority", "==", "critical"],
+            ["run_query_1:action_result.data.*.priority", "==", "medium"]
+        ],
+        name="filter_1:condition_1")
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        format_3(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    return
+
+
+def format_3(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("format_3() called")
+
+    template = """peer: {0} with {1} priority communicated {2} times\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "run_query_1:action_result.data.*.peer",
+        "run_query_1:action_result.data.*.priority",
+        "run_query_1:action_result.data.*.count"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_3")
+
+    prompt_1(container=container)
+
+    return
+
+
+def prompt_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, **kwargs):
+    phantom.debug("prompt_1() called")
+
+    # set user and message variables for phantom.prompt call
+
+    user = "admin"
+    message = """{0} has been infected and communicated with:\n\n{1}\n"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "list_merge_1:custom_function_result.data.*.item",
+        "format_3:formatted_data"
+    ]
+
+    phantom.prompt2(container=container, user=user, message=message, respond_in_mins=30, name="prompt_1", parameters=parameters)
 
     return
 
