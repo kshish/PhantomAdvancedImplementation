@@ -1,0 +1,37 @@
+{
+    "create_time": "2022-07-13T18:02:56.999805+00:00",
+    "custom_function_id": "b94aac337b0a2c535620f420540dcad274e154af",
+    "description": "this is a demo",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                ""
+            ],
+            "description": "Provide some string",
+            "input_type": "list",
+            "name": "someString",
+            "placeholder": ""
+        },
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "",
+            "input_type": "list",
+            "name": "someIp",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "myoutIp",
+            "description": ""
+        }
+    ],
+    "platform_version": "5.3.0.84310",
+    "python_version": "3"
+}
