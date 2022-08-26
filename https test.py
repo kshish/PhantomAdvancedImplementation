@@ -24,7 +24,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     parameters = []
 
     parameters.append({
-        "location": "containers",
+        "location": "container",
         "verify_certificate": False,
     })
 
