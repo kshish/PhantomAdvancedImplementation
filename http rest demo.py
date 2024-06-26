@@ -141,8 +141,8 @@ def prompt_2(action=None, success=None, container=None, results=None, handle=Non
 
     # set user and message variables for phantom.prompt call
 
-    user = ""
-    role = None
+    user = None
+    role = "Administrator"
     message = """Here's a list of the {0} CEF fields:\n\n{1}"""
 
     # parameter list for template variable replacement
