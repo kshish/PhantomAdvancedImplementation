@@ -26,9 +26,23 @@
                     "sourcePort": "4_out",
                     "targetNode": "3",
                     "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_5",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "5",
+                    "targetPort": "5_in"
+                },
+                {
+                    "id": "port_5_to_port_6",
+                    "sourceNode": "5",
+                    "sourcePort": "5_out",
+                    "targetNode": "6",
+                    "targetPort": "6_in"
                 }
             ],
-            "hash": "b6116a367784809621c8b8fffc9530ac40772fee",
+            "hash": "cef068b7f48e864fd8b5895eb8ef3237da4af4ab",
             "nodes": {
                 "0": {
                     "data": {
@@ -59,8 +73,8 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 1000
+                    "x": 980,
+                    "y": 1260
                 },
                 "2": {
                     "data": {
@@ -159,6 +173,71 @@
                     "warnings": {},
                     "x": 980,
                     "y": 744.5
+                },
+                "5": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customDatapaths": {
+                            "get_data_1": {
+                                "action_result.data.*.parsed_response_body.data": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.data",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.data"
+                                },
+                                "action_result.data.*.parsed_response_body.data.name": {
+                                    "contains": [],
+                                    "isCustomDatapath": true,
+                                    "label": "action_result.data.*.parsed_response_body.data.name",
+                                    "value": "get_data_1:action_result.data.*.parsed_response_body.data.name"
+                                }
+                            }
+                        },
+                        "functionId": 2,
+                        "functionName": "format_2",
+                        "id": "5",
+                        "parameters": [
+                            "get_data_1:action_result.data.*.parsed_response_body.data.*.name"
+                        ],
+                        "template": "%%\n{0}\n%%",
+                        "type": "format"
+                    },
+                    "errors": {},
+                    "id": "5",
+                    "type": "format",
+                    "warnings": {},
+                    "x": 1000,
+                    "y": 1064.5
+                },
+                "6": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "approver": {
+                            "type": "user",
+                            "value": ""
+                        },
+                        "functionId": 2,
+                        "functionName": "prompt_2",
+                        "id": "6",
+                        "message": "Here's a list of the {0} CEF fields:\n\n{1}",
+                        "parameters": [
+                            "prompt_1:action_result.summary.responses.0",
+                            "format_2:formatted_data"
+                        ],
+                        "responseTime": 30,
+                        "responses": [],
+                        "type": "prompt"
+                    },
+                    "errors": {},
+                    "id": "6",
+                    "type": "prompt",
+                    "warnings": {},
+                    "x": 1090,
+                    "y": 1204.5
                 }
             },
             "notes": ""
@@ -170,7 +249,7 @@
         "schema": "5.0.11",
         "version": "6.2.0.355"
     },
-    "create_time": "2024-06-26T18:43:45.660154+00:00",
+    "create_time": "2024-06-26T18:48:38.630067+00:00",
     "draft_mode": false,
     "labels": [
         "*"

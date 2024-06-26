@@ -74,7 +74,7 @@ def get_data_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["soar_inst"])
+    phantom.act("get data", parameters=parameters, name="get_data_1", assets=["soar_inst"], callback=format_2)
 
     return
 
@@ -103,6 +103,55 @@ def format_1(action=None, success=None, container=None, results=None, handle=Non
     phantom.format(container=container, template=template, parameters=parameters, name="format_1")
 
     get_data_1(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def format_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("format_2() called")
+
+    template = """%%\n{0}\n%%"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "get_data_1:action_result.data.*.parsed_response_body.data.*.name"
+    ]
+
+    ################################################################################
+    ## Custom Code Start
+    ################################################################################
+
+    # Write your custom code here...
+
+    ################################################################################
+    ## Custom Code End
+    ################################################################################
+
+    phantom.format(container=container, template=template, parameters=parameters, name="format_2")
+
+    prompt_2(container=container)
+
+    return
+
+
+@phantom.playbook_block()
+def prompt_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("prompt_2() called")
+
+    # set user and message variables for phantom.prompt call
+
+    user = ""
+    role = None
+    message = """Here's a list of the {0} CEF fields:\n\n{1}"""
+
+    # parameter list for template variable replacement
+    parameters = [
+        "prompt_1:action_result.summary.responses.0",
+        "format_2:formatted_data"
+    ]
+
+    phantom.prompt2(container=container, user=user, role=role, message=message, respond_in_mins=30, name="prompt_2", parameters=parameters)
 
     return
 
