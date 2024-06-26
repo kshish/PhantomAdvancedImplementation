@@ -1,0 +1,41 @@
+{
+    "create_time": "2024-06-26T16:26:32.797318+00:00",
+    "custom_function_id": "42f809237d31ee39493a572a89008b61a6ca5127",
+    "description": "Here's details.... blah blah....",
+    "draft_mode": false,
+    "inputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "description": "Map some IP values into this variable. This function will blah blah to this input var",
+            "input_type": "item",
+            "name": "someIp",
+            "placeholder": "111.222.33.44"
+        },
+        {
+            "contains_type": [],
+            "description": "",
+            "input_type": "item",
+            "name": "someString",
+            "placeholder": ""
+        }
+    ],
+    "outputs": [
+        {
+            "contains_type": [
+                "ip"
+            ],
+            "data_path": "outputIP",
+            "description": "This output var has the same value as input IP var"
+        },
+        {
+            "contains_type": [],
+            "data_path": "outputString",
+            "description": ""
+        }
+    ],
+    "outputs_type": "item",
+    "platform_version": "6.2.0.355",
+    "python_version": "3"
+}
